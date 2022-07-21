@@ -28,6 +28,7 @@
                     <plugin>
                         <groupId>io.fabric8</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
+                        <version>${docker-maven-version}</version>
                         <configuration>
                             <dockerHost>${docker.host}</dockerHost>
                             <certPath>${docker.cert.path}</certPath>
@@ -42,9 +43,9 @@
                             </authConfig>
                             <images>
                                 <image>
-                                    <name>order/${project.name}:${project.version}</name>
+                                    <name>platform/${project.name}:${project.version}</name>
                                     <build>
-                                        <dockerFile>${project.basedir}/LocalDockerfile</dockerFile>
+                                        <dockerFile>${project.basedir}/Dockerfile</dockerFile>
                                     </build>
                                 </image>
                             </images>
