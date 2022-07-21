@@ -16,6 +16,7 @@
     </properties>
 
     <modules>
+        <module>team-agent</module>
         <module>alpine-jdk8</module>
     </modules>
 
