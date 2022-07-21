@@ -7,7 +7,7 @@ COPY ./simhei.ttf /usr/share/fonts/simhei.ttf
 RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.16/main\nhttp://mirrors.aliyun.com/alpine/v3.16/community' > /etc/apk/repositories \
  && apk update \
 # && apk upgrade \
- && apk add tzdata \
+ && apk add tzdata busybox-extras net-tools curl \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk --no-cache add ttf-dejavu fontconfig \
  && rm -rf /var/cache/apk/*
