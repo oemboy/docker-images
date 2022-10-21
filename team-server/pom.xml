@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.platform</groupId>
+        <artifactId>docker-images</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <packaging>pom</packaging>
+    <artifactId>team-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>team-server</name>
+    <description>team-server with font, net-tools, timezone</description>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <platform.docker.tag>2022.04.4-linux</platform.docker.tag>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.fabric8</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>${docker-maven-version}</version>
+                        <configuration>
+                            <dockerHost>${docker.host}</dockerHost>
+                            <certPath>${docker.cert.path}</certPath>
+                            <registry>${docker.registry}</registry>
+                            <pushRegistry>${docker.push.registry}</pushRegistry>
+                            <useColor>true</useColor>
+                            <authConfig>
+                                <push>
+                                    <username>${docker.registry.username}</username>
+                                    <password>${docker.registry.password}</password>
+                                </push>
+                            </authConfig>
+                            <images>
+                                <image>
+                                    <name>platform/${project.name}:${platform.docker.tag}</name>
+                                    <build>
+                                        <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                    </build>
+                                </image>
+                            </images>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>build-image</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>push-image</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>push</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
+
