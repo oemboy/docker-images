@@ -17,6 +17,7 @@
 
     <modules>
         <module>team-agent</module>
+        <module>team-server</module>
         <module>alpine-jdk8</module>
         <module>alpine-jdk11</module>
     </modules>
