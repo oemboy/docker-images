@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-slim
+FROM adoptopenjdk/openjdk11:x86_64-alpine-jdk-11.0.16.1_1-slim
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8

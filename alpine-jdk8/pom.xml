@@ -18,6 +18,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <platform.docker.tag>x86_64-alpine-jdk8u345-b01-slim</platform.docker.tag>
     </properties>
 
     <profiles>
@@ -46,7 +47,7 @@
                             </authConfig>
                             <images>
                                 <image>
-                                    <name>platform/${project.name}:${project.version}</name>
+                                    <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
                                     </build>

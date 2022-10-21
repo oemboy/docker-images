@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:latest
+FROM jetbrains/teamcity-agent:2022.04.4-linux
 MAINTAINER chenbz35@dimpt.com
 
 USER root
