@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker</id>
+            <id>docker-team-server</id>
             <build>
                 <plugins>
                     <plugin>

@@ -12,5 +12,3 @@ RUN apt-get update \
     && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && dpkg-reconfigure --frontend noninteractive tzdata
 
-RUN ["chmod", "+x", "/services/run-redis.sh"]
-
