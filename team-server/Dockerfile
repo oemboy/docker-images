@@ -8,7 +8,7 @@ COPY ./simhei.ttf /usr/share/fonts/simhei.ttf
 
 # 使用验证码字体包进行测试.
 RUN apt-get update \
-    && apt-get install -y tzdata fontconfig openjdk-8-jdk redis-server vim iputils-ping curl telnet net-tools \
+    && apt-get install -y tzdata fontconfig vim iputils-ping curl telnet net-tools \
     && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && dpkg-reconfigure --frontend noninteractive tzdata
 
