@@ -18,7 +18,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>x86_64-alpine-jdk8u345-b01-slim</platform.docker.tag>
+        <platform.docker.tag>jdk8u362-b09-alpine-slim</platform.docker.tag>
     </properties>
 
     <profiles>
