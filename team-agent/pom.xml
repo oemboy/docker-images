@@ -18,7 +18,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>2022.04.4-linux</platform.docker.tag>
+        <platform.docker.tag>2022.10.2-linux</platform.docker.tag>
     </properties>
 
     <profiles>
