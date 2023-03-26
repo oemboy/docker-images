@@ -3,6 +3,8 @@
 
 + alpine-jdk8
 + alpine-jdk11
++ alpine-jdk17
++ alpine-jdk17-zulu
 + team-agent
 + team-server
 
