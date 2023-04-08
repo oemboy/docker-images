@@ -22,7 +22,7 @@
         <module>alpine-jdk8</module>
         <module>alpine-jdk11</module>
         <module>alpine-jdk17</module>
-        <module>alpine-node</module>
+        <module>alpine-nodejs</module>
         <module>alpine-jdk17-zulu</module>
     </modules>
 
