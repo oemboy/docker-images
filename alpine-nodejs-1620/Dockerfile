@@ -1,4 +1,4 @@
-FROM eclipse-temurin:8u362-b09-jdk-alpine
+FROM node:16.20.0-alpine3.17
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
@@ -11,3 +11,7 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && rm -rf /var/cache/apk/*
+
+RUN npm install -g npm@9.6.4 --registry=https://registry.npm.taobao.org \
+    && npm install -g pnpm --registry=https://registry.npm.taobao.org \
+    && npm install -g cnpm --registry=https://registry.npm.taobao.org
