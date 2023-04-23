@@ -10,20 +10,20 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-nodejs</artifactId>
+    <artifactId>alpine-redis</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alpine-nodejs</name>
-    <description>alpine-nodejs with font, net-tools, timezone, C.UTF-8</description>
+    <name>alpine-redis</name>
+    <description>alpine-redis with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>18.16.0</platform.docker.tag>
+        <platform.docker.tag>6.2.12</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>docker-nodejs</id>
+            <id>docker-redis</id>
             <build>
                 <plugins>
                     <plugin>
