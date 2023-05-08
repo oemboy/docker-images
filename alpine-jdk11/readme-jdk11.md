@@ -15,7 +15,7 @@
 + source
 
 ```
-FROM eclipse-temurin:11.0.18_10-jdk-alpine
+FROM eclipse-temurin:11.0.19_7-jdk-alpine
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
