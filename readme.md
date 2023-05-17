@@ -1,16 +1,19 @@
 ## Docker images basic
 
-
++ alpine-dnsmasq
 + alpine-jdk8
 + alpine-jdk11
 + alpine-jdk17
 + alpine-jdk17-zulu
++ alpine-nodejs
++ alpine-nodejs-1620
++ alpine-redis
 + team-agent
 + team-server
 
 # alpine-jdk8
 
-+ support chinese font: simhei.ttf  
++ support chinese font: simhei.ttf
 + timezone
 + busybox-extras net-tools curl
 
