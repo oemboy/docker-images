@@ -29,7 +29,6 @@
                     <plugin>
                         <groupId>io.fabric8</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
-                        <version>${docker-maven-version}</version>
                         <configuration>
                             <dockerHost>${docker.host}</dockerHost>
                             <certPath>${docker.cert.path}</certPath>
@@ -47,11 +46,6 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-                                        <buildx>
-                                            <platforms>
-                                                <platform>${docker.platforms}</platform>
-                                            </platforms>
-                                        </buildx>
                                     </build>
                                 </image>
                             </images>

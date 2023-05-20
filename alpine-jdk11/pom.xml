@@ -29,7 +29,6 @@
                     <plugin>
                         <groupId>io.fabric8</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
-                        <version>${docker-maven-version}</version>
                         <configuration>
                             <dockerHost>${docker.host}</dockerHost>
                             <certPath>${docker.cert.path}</certPath>
