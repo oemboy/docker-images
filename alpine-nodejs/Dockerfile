@@ -14,4 +14,7 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.
 
 RUN npm install -g npm --registry=https://registry.npmmirror.com \
     && npm install -g pnpm --registry=https://registry.npmmirror.com \
-    && npm install -g cnpm --registry=https://registry.npmmirror.com
+    && npm install -g cnpm --registry=https://registry.npmmirror.com \
+    && npm install -g nnrm  --registry=https://registry.npmmirror.com \
+    && nnrm use taoao \
+    && nyrm use taoao
