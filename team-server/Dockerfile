@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-server:2022.10.2-linux
+FROM jetbrains/teamcity-server:2023.05-linux
 MAINTAINER chenbz35@dimpt.com
 
 USER root
