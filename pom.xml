@@ -13,7 +13,7 @@
         <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <docker-maven-version>0.42.1</docker-maven-version>
+        <docker-maven-version>0.43.0</docker-maven-version>
         <docker.platforms>linux/amd64,linux/arm64</docker.platforms>
         <platform.docker.tag>latest</platform.docker.tag>
     </properties>
