@@ -18,7 +18,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>17.0.6_10-temurin</platform.docker.tag>
+        <platform.docker.tag>17.0.7</platform.docker.tag>
     </properties>
 
     <profiles>
@@ -46,6 +46,11 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                        <buildx>
+                                            <platforms>
+                                                <platform>${docker.platforms}</platform>
+                                            </platforms>
+                                        </buildx>
                                     </build>
                                 </image>
                             </images>
