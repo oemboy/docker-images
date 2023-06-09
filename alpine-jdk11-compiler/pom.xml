@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-jdk11</artifactId>
+    <artifactId>alpine-jdk11-compiler</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>alpine-jdk11-compiler</name>
     <description>alpine-jdk11 with font, net-tools, timezone, C.UTF-8</description>
