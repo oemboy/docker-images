@@ -15,7 +15,6 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.
  && tar -zxf /opt/maven.tar.gz -C /opt \
  && echo 'export PATH=/opt/apache-maven-3.8.8/bin:${PATH}' > /etc/profile.d/maven.sh \
  && chmod +x /etc/profile.d/maven.sh \
- && source /etc/profile.d/maven.sh \
  && rm -rf /var/cache/apk/*
 
 ENV JAVA_HOME=/opt/java/openjdk
