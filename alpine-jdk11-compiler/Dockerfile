@@ -8,6 +8,7 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.
  && apk update \
 # && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux maven\
+ && apk del openjdk17-jre openjdk17-jmods openjdk17-jdk \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
