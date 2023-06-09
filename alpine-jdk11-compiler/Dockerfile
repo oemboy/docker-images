@@ -17,6 +17,6 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.
 
 ENV JAVA_HOME=/opt/java/openjdk
 ENV MAVEN_HOME=/opt/apache-maven-3.8.8
-ENV PATH=${MAVEN_HOME}/bin:${PATH}
+ENV PATH=/opt/apache-maven-3.8.8/bin
 
 
