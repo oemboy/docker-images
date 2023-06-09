@@ -11,4 +11,9 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
+ && curl -LfSo /opt/maven.tar.gz https://dimpt.site/docker/apache-maven-3.8.8-bin.tar.gz \
+ && tar -zxf /opt/maven.tar.gz -C /opt \
+ && echo -e 'export JAVA_HOME=/opt/java/openjdk\nexport MAVEN_HOME=/opt/apache-maven-3.8.8\nexport PATH=${MAVEN_HOME}/bin:${PATH}' > /etc/profile.d/maven.sh \
  && rm -rf /var/cache/apk/*
+
+
