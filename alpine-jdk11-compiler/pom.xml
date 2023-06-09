@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-jdk11</id>
+            <id>docker-jdk11-compiler</id>
             <build>
                 <plugins>
                     <plugin>
