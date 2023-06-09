@@ -13,8 +13,9 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.
  && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
  && curl -LfSo /opt/maven.tar.gz https://dimpt.site/docker/apache-maven-3.8.8-bin.tar.gz \
  && tar -zxf /opt/maven.tar.gz -C /opt \
- && echo -e 'export PATH=/opt/apache-maven-3.8.8/bin:${PATH}' > /etc//profile.d/maven.sh \
- && chmod +x /etc//profile.d/maven.sh \
+ && echo 'export PATH=/opt/apache-maven-3.8.8/bin:${PATH}' > /etc/profile.d/maven.sh \
+ && chmod +x /etc/profile.d/maven.sh \
+ && source /etc/profile.d/maven.sh \
  && rm -rf /var/cache/apk/*
 
 ENV JAVA_HOME=/opt/java/openjdk
