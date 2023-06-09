@@ -3,6 +3,9 @@ MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
 #COPY ./simhei.ttf /usr/share/fonts/simhei.ttf
+ENV JAVA_HOME=/opt/java/openjdk
+ENV MAVEN_HOME=/opt/apache-maven-3.8.8
+ENV PATH=${MAVEN_HOME}/bin:${PATH}
 
 RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.com/alpine/v3.18/community' > /etc/apk/repositories \
  && apk update \
@@ -13,7 +16,6 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.
  && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
  && curl -LfSo /opt/maven.tar.gz https://dimpt.site/docker/apache-maven-3.8.8-bin.tar.gz \
  && tar -zxf /opt/maven.tar.gz -C /opt \
- && echo -e 'export JAVA_HOME=/opt/java/openjdk\nexport MAVEN_HOME=/opt/apache-maven-3.8.8\nexport PATH=${MAVEN_HOME}/bin:${PATH}' > /etc/profile.d/maven.sh \
  && rm -rf /var/cache/apk/*
 
 
