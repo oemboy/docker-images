@@ -7,8 +7,7 @@ MAINTAINER chenbz35@dimpt.com
 RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.18/main\nhttp://mirrors.aliyun.com/alpine/v3.18/community' > /etc/apk/repositories \
  && apk update \
 # && apk upgrade \
- && apk add tzdata busybox-extras net-tools curl util-linux maven\
- && apk del openjdk17-jre openjdk17-jmods openjdk17-jdk \
+ && apk add tzdata busybox-extras net-tools curl util-linux \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
