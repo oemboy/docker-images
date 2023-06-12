@@ -9,6 +9,6 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
- && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
  && apk add ttf-dejavu fontconfig \
+ && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
  && rm -rf /var/cache/apk/*
