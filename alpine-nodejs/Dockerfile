@@ -4,7 +4,7 @@ MAINTAINER chenbz35@dimpt.com
 # ENV LANG=C.UTF-8
 RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.com/alpine/v3.17/community' > /etc/apk/repositories \
  && apk update \
-# && apk upgrade \
+ && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
@@ -14,6 +14,6 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.
     && npm install -g pnpm --registry=https://registry.npmmirror.com \
     && npm install -g cnpm --registry=https://registry.npmmirror.com \
     && npm install -g nnrm  --registry=https://registry.npmmirror.com \
-    && nnrm use taoao \
-    && nyrm use taoao \
+    && nnrm use taobao \
+    && nyrm use taobao \
     && npm cache clean --force
