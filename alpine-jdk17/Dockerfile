@@ -9,4 +9,5 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
+ && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && rm -rf /var/cache/apk/*
