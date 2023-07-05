@@ -20,6 +20,8 @@
 
     <modules>
         <module>team-agent</module>
+        <module>openj9-jdk11</module>
+        <module>openj9-jre11</module>
         <module>team-server</module>
         <module>alpine-dnsmasq</module>
         <module>alpine-jdk8</module>

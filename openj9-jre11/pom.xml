@@ -10,20 +10,20 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-jre8</artifactId>
+    <artifactId>openj9-jre11</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alpine-jre8</name>
-    <description>alpine-jre8 with font, net-tools, timezone, C.UTF-8</description>
+    <name>openj9-jre</name>
+    <description>openj9-jre11 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>8u372</platform.docker.tag>
+        <platform.docker.tag>11.0.19</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>docker-jre8</id>
+            <id>docker-openj9</id>
             <build>
                 <plugins>
                     <plugin>
