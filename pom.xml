@@ -30,7 +30,6 @@
         <module>alpine-jdk17</module>
         <module>alpine-nodejs</module>
         <module>alpine-nodejs-1620</module>
-        <module>alpine-jdk17-zulu</module>
         <module>alpine-redis</module>
         <module>alpine-nginx</module>
     </modules>
