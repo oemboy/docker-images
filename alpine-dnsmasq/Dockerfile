@@ -7,7 +7,7 @@ COPY ./program.toml /root/program.toml
 COPY ./webproc /root/webproc
 COPY ./conf /etc/dnsmasq.d/
 
-RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.com/alpine/v3.17/community' > /etc/apk/repositories \
+RUN echo -e 'http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttp://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl dnsmasq util-linux bind-tools \
