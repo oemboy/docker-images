@@ -3,7 +3,6 @@ MAINTAINER chenbz35@dimpt.com
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8
-COPY ./simhei.ttf /usr/share/fonts/simhei.ttf
 COPY ./program.toml /root/program.toml
 COPY ./webproc /root/webproc
 COPY ./conf /etc/dnsmasq.d/
@@ -18,6 +17,7 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.17/main\nhttp://mirrors.aliyun.
 # && gzip -d /root/webproc_0.4.0_linux_amd64.gz -C /root \
 # && rm -rf /root/webproc_0.4.0_linux_amd64.gz \
  && rm -rf /var/cache/apk/* \
+ && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && chmod +x /root/webproc
 
 EXPOSE 9527 53
