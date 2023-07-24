@@ -1,10 +1,10 @@
-FROM amazoncorretto:8u372-alpine-jre
+FROM amazoncorretto:8u382-alpine-jre
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
 
-RUN echo -e 'http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttp://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/community' > /etc/apk/repositories \
+RUN echo -e 'http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttp://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
  && apk update \
 # && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
