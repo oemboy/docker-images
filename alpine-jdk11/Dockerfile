@@ -1,4 +1,4 @@
-FROM eclipse-temurin:11.0.19_7-jdk-alpine
+FROM amazoncorretto:11.0.20-alpine3.18
 # FROM jdk-11.0.19_7_openj9-0.38.0-alpine-slim #alpine 3.14 # no scan
 MAINTAINER chenbz35@dimpt.com
 

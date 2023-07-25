@@ -1,4 +1,4 @@
-FROM eclipse-temurin:11.0.19_7-jdk-alpine
+FROM amazoncorretto:11.0.20-alpine3.18
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
