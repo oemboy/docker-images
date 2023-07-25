@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t platform/dnsmasq:alpine-webproc
+docker build -t platform/alpine-nginx:1.25.1 .

@@ -1,10 +1,10 @@
-FROM nginx:1.25.0-alpine3.17
+FROM nginx:1.25.1-alpine3.17
 MAINTAINER chenbz35@dimpt.com
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8
 
-RUN echo -e 'http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttp://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
