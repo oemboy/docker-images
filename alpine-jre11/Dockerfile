@@ -1,4 +1,4 @@
-FROM eclipse-temurin:11.0.19_7-jre-alpine
+FROM eclipse-temurin:11.0.20_8-jre-alpine
 # FROM adoptopenjdk/openjdk11-openj9:jre-11.0.19_7_openj9-0.38.0-alpine #alpine 3.14 # no scan
 MAINTAINER chenbz35@dimpt.com
 
