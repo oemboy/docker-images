@@ -1,4 +1,4 @@
-FROM redis:6.2.12-alpine3.18
+FROM redis:6.2.13-alpine3.18
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
