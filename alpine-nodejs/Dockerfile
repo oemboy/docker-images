@@ -1,4 +1,4 @@
-FROM node:18.17.0-alpine3.18
+FROM node:18.17.1-alpine3.18
 MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
@@ -8,8 +8,6 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
  && apk add tzdata busybox-extras net-tools curl util-linux \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
-# && curl -LfSo /usr/share/fonts/simhei.ttf https://dimpt.site/docker/simhei.ttf \
- && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && rm -rf /var/cache/apk/* \
  && npm install -g npm --registry=https://registry.npmmirror.com \
     && npm install -g pnpm --registry=https://registry.npmmirror.com \

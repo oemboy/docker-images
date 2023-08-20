@@ -46,11 +46,11 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-<!--                                        <buildx>-->
-<!--                                            <platforms>-->
-<!--                                                <platform>${docker.platforms}</platform>-->
-<!--                                            </platforms>-->
-<!--                                        </buildx>-->
+                                        <buildx>
+                                            <platforms>
+                                                <platform>${docker.platforms}</platform>
+                                            </platforms>
+                                        </buildx>
                                     </build>
                                 </image>
                             </images>

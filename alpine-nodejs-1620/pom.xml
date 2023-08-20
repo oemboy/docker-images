@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-nodejs</id>
+            <id>docker-nodejs16</id>
             <build>
                 <plugins>
                     <plugin>
