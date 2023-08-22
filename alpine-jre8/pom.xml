@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-jre8</id>
+            <id>alpine-jre8</id>
             <build>
                 <plugins>
                     <plugin>

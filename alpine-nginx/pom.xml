@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-nginx</id>
+            <id>alpine-nginx</id>
             <build>
                 <plugins>
                     <plugin>

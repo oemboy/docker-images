@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-redis</id>
+            <id>alpine-redis</id>
             <build>
                 <plugins>
                     <plugin>

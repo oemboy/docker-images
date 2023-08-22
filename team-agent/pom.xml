@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-team-agent</id>
+            <id>team-agent</id>
             <build>
                 <plugins>
                     <plugin>

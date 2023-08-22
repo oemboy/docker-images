@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
     <artifactId>openj9-jre11</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>openj9-jre</name>
+    <name>openj9-jre11</name>
     <description>openj9-jre11 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-openj9</id>
+            <id>openj9-jre11</id>
             <build>
                 <plugins>
                     <plugin>

@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-dnsmasq</id>
+            <id>alpine-dnsmasq</id>
             <build>
                 <plugins>
                     <plugin>

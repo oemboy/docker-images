@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
     <artifactId>openj9-jdk11</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>openj9-jdk</name>
+    <name>openj9-jdk11</name>
     <description>openj9-jdk11 with font, net-tools, timezone</description>
 
     <properties>
@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-openj9</id>
+            <id>openj9-jdk11</id>
             <build>
                 <plugins>
                     <plugin>

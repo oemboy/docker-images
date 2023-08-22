@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-jre11</id>
+            <id>alpine-jre11</id>
             <build>
                 <plugins>
                     <plugin>

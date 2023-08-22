@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>docker-nodejs</id>
+            <id>alpine-nodejs</id>
             <build>
                 <plugins>
                     <plugin>
