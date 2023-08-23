@@ -19,17 +19,18 @@
     </properties>
 
     <modules>
-        <module>team-agent</module>
-        <module>openj9-jdk11</module>
-        <module>openj9-jre11</module>
         <module>team-server</module>
+        <module>team-agent</module>
         <module>alpine-dnsmasq</module>
         <module>alpine-jdk8</module>
+        <module>alpine-jre8</module>
         <module>alpine-jdk11</module>
         <module>alpine-jdk11-compiler</module>
-        <module>alpine-jre8</module>
         <module>alpine-jre11</module>
         <module>alpine-jdk17</module>
+        <module>alpine-jre17</module>
+        <module>openj9-jdk11</module>
+        <module>openj9-jre11</module>
         <module>alpine-nodejs</module>
         <module>alpine-nodejs-1620</module>
         <module>alpine-redis</module>
