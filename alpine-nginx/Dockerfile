@@ -4,7 +4,7 @@ MAINTAINER chenbz35@dimpt.com
 WORKDIR /root/
 # ENV LANG=C.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
