@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>alpine-nodejs-1620</id>
+            <id>alpine-nodejs</id>
             <build>
                 <plugins>
                     <plugin>
