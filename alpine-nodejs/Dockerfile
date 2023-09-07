@@ -3,7 +3,7 @@ MAINTAINER chenbz35@dimpt.com
 
 # ENV LANG=C.UTF-8
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
- && echo "10.100.240.25 dimpt.site" >> /etc/hosts \
+ && echo '10.100.240.25 dimpt.site' >> /etc/hosts \
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
@@ -17,3 +17,4 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
     && nnrm use taobao \
     && nyrm use taobao \
     && npm cache clean --force
+
