@@ -46,6 +46,9 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                        <buildOptions>
+                                            <add-host>dimpt.site:10.100.240.25</add-host>
+                                        </buildOptions>
                                     </build>
                                 </image>
                             </images>
