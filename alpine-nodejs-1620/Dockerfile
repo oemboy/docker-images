@@ -9,9 +9,7 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && rm -rf /var/cache/apk/* \
- && npm install -g npm --registry=https://registry.npmmirror.com \
  && npm install -g pnpm --registry=https://registry.npmmirror.com \
- && npm install -g cnpm --registry=https://registry.npmmirror.com \
  && npm install -g nnrm  --registry=https://registry.npmmirror.com \
  && nnrm use taobao \
  && nyrm use taobao \
