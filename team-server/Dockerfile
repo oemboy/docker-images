@@ -1,5 +1,5 @@
 FROM jetbrains/teamcity-server:2023.05-linux
-MAINTAINER chenbz35@dimpt.com
+LABEL maintainer="chenbz35@dimpt.com"
 
 USER root
 # ENV LANG=C.UTF-8

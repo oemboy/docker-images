@@ -1,5 +1,5 @@
 FROM ibm-semeru-runtimes:open-11.0.19_7-jdk-jammy
-MAINTAINER chenbz35@dimpt.com
+LABEL maintainer="chenbz35@dimpt.com"
 
 USER root
 #ENV LANG en_US.UTF-8

@@ -1,6 +1,6 @@
 FROM eclipse-temurin:11-jre
 # FROM adoptopenjdk/openjdk11-openj9:jre-11.0.19_7_openj9-0.38.0-alpine #alpine 3.14 # no scan
-MAINTAINER chenbz35@dimpt.com
+LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8

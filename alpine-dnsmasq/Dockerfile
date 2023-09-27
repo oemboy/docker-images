@@ -1,5 +1,5 @@
 FROM alpine:3.17.3
-MAINTAINER chenbz35@dimpt.com
+LABEL maintainer="chenbz35@dimpt.com"
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8

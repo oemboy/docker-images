@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17.0.8_7-jre-alpine
-MAINTAINER chenbz35@dimpt.com
+LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8

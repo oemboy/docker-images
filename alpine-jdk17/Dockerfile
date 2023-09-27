@@ -1,5 +1,5 @@
 FROM amazoncorretto:17.0.8-alpine3.18
-MAINTAINER chenbz35@dimpt.com
+LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
