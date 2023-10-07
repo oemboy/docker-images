@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t platform/alpine-nodejs:18.17.1  --push .
+docker build -t dimpt.site:8180/alpine-nodejs:18.18.0  --push .
 
