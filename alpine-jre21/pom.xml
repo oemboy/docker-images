@@ -10,20 +10,20 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-nodejs</artifactId>
+    <artifactId>alpine-jre21</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alpine-nodejs</name>
-    <description>alpine-nodejs with font, net-tools, timezone, C.UTF-8</description>
+    <name>alpine-jre21</name>
+    <description>alpine-jre21 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>18.18.2</platform.docker.tag>
+        <platform.docker.tag>latest</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-nodejs</id>
+            <id>alpine-jre21</id>
             <build>
                 <plugins>
                     <plugin>
@@ -46,11 +46,9 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-                                        <buildx>
-                                            <platforms>
-                                                <platform>${docker.platforms}</platform>
-                                            </platforms>
-                                        </buildx>
+                                        <buildOptions>
+                                            <add-host>dimpt.site:10.100.240.25</add-host>
+                                        </buildOptions>
                                     </build>
                                 </image>
                             </images>
