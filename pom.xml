@@ -38,6 +38,7 @@
         <module>alpine-nodejs-1620</module>
         <module>alpine-redis</module>
         <module>alpine-nginx</module>
+        <module>alpine-openresty</module>
     </modules>
 
     <build>
