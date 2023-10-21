@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:2023.05.4-linux
+FROM jetbrains/teamcity-minimal-agent:2023.05.4-linux
 LABEL maintainer="chenbz35@dimpt.com"
 
 USER root
@@ -7,6 +7,7 @@ USER root
 COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update \
+    && apt-get upgrade -y \
     && apt-get install -y tzdata fontconfig fonts-dejavu openjdk-8-jdk openjdk-11-jdk redis-server vim iputils-ping curl telnet net-tools \
     && rm -rf /var/lib/apt/lists/*
 
