@@ -8,6 +8,7 @@ USER root
 #COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update \
+    pt-get upgrade \
     && apt-get install -y tzdata fontconfig fonts-dejavu vim iputils-ping curl telnet net-tools \
     && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
     && rm -rf /var/lib/apt/lists/*

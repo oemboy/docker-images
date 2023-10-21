@@ -1,4 +1,4 @@
-FROM amazoncorretto:8u382-alpine-jre
+FROM amazoncorretto:8u392-alpine-jre
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8

@@ -4,9 +4,6 @@
 + 利用基础的alpine-jdk镜像客制化, 满足生产要求
 # alpine-node
 
-+ support chinese font: simhei.ttf
-  - 支持中文字体
-  - 简单使用 simhei
 + timezone
     - 设置时区+8
 + busybox-extras net-tools curl
