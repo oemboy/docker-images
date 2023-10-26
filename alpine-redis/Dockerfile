@@ -1,4 +1,4 @@
-FROM redis:6.2.13-alpine3.18
+FROM redis:6.2.14-alpine3.18
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
