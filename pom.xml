@@ -39,6 +39,7 @@
         <module>alpine-nodejs-16</module>
         <module>alpine-redis</module>
         <module>alpine-nginx</module>
+        <module>alpine-zookeeper</module>
         <module>alpine-openresty</module>
     </modules>
 

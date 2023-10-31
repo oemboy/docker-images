@@ -9,7 +9,7 @@ LABEL origin="amazoncorretto:11.0.20-alpine3.18"
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add tzdata busybox-extras net-tools curl util-linux \
+ && apk add tzdata busybox-extras net-tools curl util-linux wget \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
