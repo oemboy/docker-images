@@ -1,0 +1,30 @@
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.20
+LABEL maintainer="chenbz35@dimpt.com"
+
+ARG PKG_VERSION=zookeeper-3.8.3
+ARG ARCHIVE_NAME=apache-zookeeper-3.8.3-bin
+ARG ZOO_URL=https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/${PKG_VERSION}/${ARCHIVE_NAME}.tar.gz
+
+ARG ZK_HOME=/opt/zookeeper
+ARG ZK_CLIENT_PORT=2181
+
+
+
+ENV PATH=$PATH:$ZK_HOME/bin
+ENV ZK_HOME=${ZK_HOME}
+ENV TZ=Asia/Shanghai
+
+# ENV LANG=C.UTF-8
+RUN wget -q -O - "${ZOO_URL}" | tar -xzf - -C /opt \
+    && mv /opt/${ARCHIVE_NAME} "${ZK_HOME}" \
+    && mv ${ZK_HOME}/conf/zoo_sample.cfg ${ZK_HOME}/conf/zoo.cfg \
+    && mkdir  "${ZK_HOME}/data"  \
+    && sed -i '/^dataDir/c #dataDir' ${ZK_HOME}/conf/zoo.cfg \
+    && echo "1"  > /opt/zookeeper/data/myid \
+    && echo -e "dataDir=${ZK_HOME}/data" >> ${ZK_HOME}/conf/zoo.cfg
+
+VOLUME ["${ZK_HOME}/data", "${ZK_HOME}/logs", "${ZK_HOME}/conf"]
+EXPOSE ${ZK_CLIENT_PORT} 2888 3888
+
+WORKDIR ${ZK_HOME}
+ENTRYPOINT ["zkServer.sh", "start-foreground"]

@@ -17,7 +17,6 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttps://mir
 # && gzip -d /root/webproc_0.4.0_linux_amd64.gz -C /root \
 # && rm -rf /root/webproc_0.4.0_linux_amd64.gz \
  && rm -rf /var/cache/apk/* \
- && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && chmod +x /root/webproc
 
 EXPOSE 9527 53
