@@ -1,7 +1,7 @@
 FROM amazoncorretto:11.0.21-alpine3.18
 # FROM jdk-11.0.19_7_openj9-0.38.0-alpine-slim #alpine 3.14 # no scan
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="amazoncorretto:11.0.20-alpine3.18"
+LABEL origin="amazoncorretto:11.0.21-alpine3.18"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
