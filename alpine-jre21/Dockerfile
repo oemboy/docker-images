@@ -1,7 +1,5 @@
 FROM eclipse-temurin:21-jre-alpine
-# FROM adoptopenjdk/openjdk11-openj9:jre-11.0.19_7_openj9-0.38.0-alpine #alpine 3.14 # no scan
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="eclipse-temurin:11.0.20.1_1-jre-alpine"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
