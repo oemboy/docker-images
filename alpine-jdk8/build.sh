@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t platform/alpine-jdk8:alpine-jdk
+docker build --add-host dimpt.site:10.100.240.25 -t dimpt.site:8180/platform/alpine-jdk8:8u392 --push .

@@ -12,3 +12,6 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && rm -rf /var/cache/apk/*
+
+ENV TZ=Asia/Shanghai
+

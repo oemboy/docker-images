@@ -17,5 +17,7 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
 ENV JAVA_HOME=/opt/java/openjdk
 ENV MAVEN_HOME=/opt/apache-maven-3.8.8
 ENV PATH=/opt/apache-maven-3.8.8/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV TZ=Asia/Shanghai
+
 
 
