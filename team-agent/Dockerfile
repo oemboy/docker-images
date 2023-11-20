@@ -8,7 +8,7 @@ COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y tzdata fontconfig fonts-dejavu openjdk-8-jdk openjdk-11-jdk redis-server vim iputils-ping curl telnet net-tools \
+    && apt-get install -y tzdata fontconfig fonts-dejavu git openjdk-8-jdk openjdk-11-jdk redis-server vim iputils-ping curl telnet net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 ENV TZ=Asia/Shanghai
