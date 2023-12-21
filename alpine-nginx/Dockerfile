@@ -1,6 +1,6 @@
-FROM nginx:1.25.2-alpine
+FROM nginx:1.25.3-alpine
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="nginx:1.25.2-alpine"
+LABEL origin="nginx:1.25.3-alpine"
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8
