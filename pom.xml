@@ -28,7 +28,6 @@
         <module>alpine-jdk11</module>
         <module>alpine-jdk11-compiler</module>
         <module>alpine-jre11</module>
-        <module>alpine-jre11-jammy</module>
         <module>alpine-jdk17</module>
         <module>alpine-jre17</module>
         <module>openj9-jdk11</module>
