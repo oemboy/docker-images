@@ -1,4 +1,6 @@
 FROM eclipse-temurin:17.0.9_9-jre-alpine
+#multi platform basic image
+#azul/zulu-openjdk-alpine:17.0.9-jre
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
