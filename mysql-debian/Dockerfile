@@ -1,4 +1,4 @@
-FROM mysql:8.0.35-debian
+FROM mysql:8.0.36-debian
 LABEL maintainer="chenbz35@dimpt.com"
 
 USER root
