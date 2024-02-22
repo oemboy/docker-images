@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --add-host dimpt.site:10.100.240.69 -t dimpt.site:8180/platform/alpine-nodejs:20.11.1  --push .
+docker build -t dimpt.site:8180/platform/alpine-nodejs:20.11.1  --push .
