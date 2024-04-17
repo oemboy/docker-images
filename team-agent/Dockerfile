@@ -1,4 +1,4 @@
-FROM jetbrains/jetbrains/teamcity-agent:2024.03-linux
+FROM jetbrains/teamcity-agent:2024.03-linux
 LABEL maintainer="chenbz35@dimpt.com"
 
 USER root
