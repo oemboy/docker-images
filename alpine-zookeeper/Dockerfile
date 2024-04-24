@@ -1,8 +1,8 @@
 FROM dimpt.site:8181/platform/alpine-jre11:11.0.20
 LABEL maintainer="chenbz35@dimpt.com"
 
-ARG PKG_VERSION=zookeeper-3.8.3
-ARG ARCHIVE_NAME=apache-zookeeper-3.8.3-bin
+ARG PKG_VERSION=zookeeper-3.8.4
+ARG ARCHIVE_NAME=apache-zookeeper-3.8.4-bin
 ARG ZOO_URL=https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/${PKG_VERSION}/${ARCHIVE_NAME}.tar.gz
 
 ARG ZK_HOME=/opt/zookeeper
