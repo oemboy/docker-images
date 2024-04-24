@@ -8,7 +8,6 @@ ARG ZK_HOME=/opt/zookeeper
 
 # ENV LANG=C.UTF-8
 RUN wget -q "${ZOO_URL}" \
-    && ls -lrt \
     && tar -xzf ${ARCHIVE_NAME}.tar.gz -C /opt \
     && mv /opt/${ARCHIVE_NAME} "${ZK_HOME}" \
     && mv ${ZK_HOME}/conf/zoo_sample.cfg ${ZK_HOME}/conf/zoo.cfg \
