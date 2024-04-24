@@ -1,21 +1,15 @@
-FROM dimpt.site:8181/platform/alpine-jre11:11.0.20
-LABEL maintainer="chenbz35@dimpt.com"
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.21 as prepare
 
 ARG PKG_VERSION=zookeeper-3.8.4
 ARG ARCHIVE_NAME=apache-zookeeper-3.8.4-bin
 ARG ZOO_URL=https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/${PKG_VERSION}/${ARCHIVE_NAME}.tar.gz
 
 ARG ZK_HOME=/opt/zookeeper
-ARG ZK_CLIENT_PORT=2181
-
-
-
-ENV PATH=$PATH:$ZK_HOME/bin
-ENV ZK_HOME=${ZK_HOME}
-ENV TZ=Asia/Shanghai
 
 # ENV LANG=C.UTF-8
-RUN wget -q -O - "${ZOO_URL}" | tar -xzf - -C /opt \
+RUN wget -q "${ZOO_URL}" \
+    && ls -lrt \
+    && tar -xzf ${ARCHIVE_NAME}.tar.gz -C /opt \
     && mv /opt/${ARCHIVE_NAME} "${ZK_HOME}" \
     && mv ${ZK_HOME}/conf/zoo_sample.cfg ${ZK_HOME}/conf/zoo.cfg \
     && mkdir  "${ZK_HOME}/data"  \
@@ -23,6 +17,18 @@ RUN wget -q -O - "${ZOO_URL}" | tar -xzf - -C /opt \
     && echo "1"  > /opt/zookeeper/data/myid \
     && echo -e "dataDir=${ZK_HOME}/data" >> ${ZK_HOME}/conf/zoo.cfg
 
+
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.21
+LABEL maintainer="chenbz35@dimpt.com"
+
+ARG ZK_HOME=/opt/zookeeper
+ARG ZK_CLIENT_PORT=2181
+
+ENV PATH=$PATH:$ZK_HOME/bin
+ENV ZK_HOME=${ZK_HOME}
+ENV TZ=Asia/Shanghai
+
+COPY --from=prepare ${ZK_HOME} ${ZK_HOME}
 VOLUME ["${ZK_HOME}/data", "${ZK_HOME}/logs", "${ZK_HOME}/conf"]
 EXPOSE ${ZK_CLIENT_PORT} 2888 3888
 
