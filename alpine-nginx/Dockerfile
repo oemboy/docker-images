@@ -1,11 +1,11 @@
-FROM nginx:1.25.4-alpine
+FROM nginx:1.26.0-alpine
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="nginx:1.25.4-alpine"
+LABEL origin="nginx:1.26.0-alpine"
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux \
