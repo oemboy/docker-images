@@ -1,4 +1,4 @@
-FROM node:18.20.1-alpine3.18
+FROM node:18.20.2-alpine3.18
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
