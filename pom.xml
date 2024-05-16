@@ -44,6 +44,7 @@
         <module>alpine-zookeeper</module>
         <module>alpine-sshd</module>
         <module>alpine-openresty</module>
+        <module>jenkins</module>
     </modules>
 
     <build>
