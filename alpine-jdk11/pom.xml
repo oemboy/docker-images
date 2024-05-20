@@ -46,10 +46,12 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                    </build>
+                                    <run>
                                         <extraHosts>
                                             <extraHost>dimpt.site:10.100.240.25</extraHost>
                                         </extraHosts>
-                                    </build>
+                                    </run>
                                 </image>
                             </images>
                         </configuration>

@@ -3,7 +3,7 @@ FROM eclipse-temurin:11.0.23_9-jre-alpine
 # multi platforms
 # FROM azul/zulu-openjdk-alpine:11.0.20.1-jre
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="eclipse-temurin:11.0.21_9-jre-alpine"
+LABEL origin="eclipse-temurin:11.0.23_9-jre-alpine"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
