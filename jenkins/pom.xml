@@ -18,7 +18,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <platform.docker.tag>2023.05-linux</platform.docker.tag>
+        <platform.docker.tag>2.452.1-lts-jdk17</platform.docker.tag>
     </properties>
 
     <profiles>
