@@ -31,5 +31,9 @@ COPY --from=prepare ${ZK_HOME} ${ZK_HOME}
 VOLUME ["${ZK_HOME}/data", "${ZK_HOME}/logs", "${ZK_HOME}/conf"]
 EXPOSE ${ZK_CLIENT_PORT} 2888 3888
 
+RUN apk update \
+    && apk upgrade \
+    && apk add --no-cache bash
+
 WORKDIR ${ZK_HOME}
 ENTRYPOINT ["zkServer.sh", "start-foreground"]
