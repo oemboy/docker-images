@@ -7,7 +7,8 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mir
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools util-linux wget openssh openrc \
- && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
+ && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && echo "Asia/Shanghai" > /etc/timezone \
  && apk add ttf-dejavu fontconfig \
  && sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config \
  && sed -i "s/AllowTcpForwarding.*/AllowTcpForwarding yes/g" /etc/ssh/sshd_config \

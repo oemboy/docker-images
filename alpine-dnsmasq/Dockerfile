@@ -11,7 +11,8 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttps://mir
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl dnsmasq util-linux bind-tools \
- && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
+ && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && echo "Asia/Shanghai" > /etc/timezone \
  && apk add ttf-dejavu fontconfig \
 # && curl -LfSo /root/webproc_0.4.0_linux_amd64.gz https://github.com/jpillora/webproc/releases/download/v0.4.0/webproc_0.4.0_linux_amd64.gz \
 # && gzip -d /root/webproc_0.4.0_linux_amd64.gz -C /root \

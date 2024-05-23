@@ -1,4 +1,4 @@
-FROM amazoncorretto:11.0.21-alpine3.18
+FROM amazoncorretto:11.0.23-alpine3.18
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
@@ -8,7 +8,8 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
  && apk update \
  && apk upgrade \
  && apk add tzdata busybox-extras net-tools curl util-linux wget \
- && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && apk del tzdata \
+ && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && echo "Asia/Shanghai" > /etc/timezone \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSo /opt/maven.tar.gz https://dimpt.site/docker/apache-maven-3.8.8-bin.tar.gz \
  && tar -zxf /opt/maven.tar.gz -C /opt \
