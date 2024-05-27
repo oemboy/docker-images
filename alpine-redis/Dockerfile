@@ -10,4 +10,5 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mir
  && echo "Asia/Shanghai" > /etc/timezone \
  && apk add ttf-dejavu fontconfig \
  && curl -LfSov /usr/local/etc/redis/redis.conf https://dimpt.site/docker/redis/redis.conf \
+ && apk del curl \
  && rm -rf /var/cache/apk/*

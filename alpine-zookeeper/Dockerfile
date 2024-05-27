@@ -33,7 +33,9 @@ EXPOSE ${ZK_CLIENT_PORT} 2888 3888
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache bash
+    && apk add --no-cache bash \
+    && apk del curl \
+    && rm -rf /var/cache/apk/*
 
 WORKDIR ${ZK_HOME}
 ENTRYPOINT ["zkServer.sh", "start-foreground"]
