@@ -9,5 +9,5 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mir
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
  && apk add ttf-dejavu fontconfig \
- && curl -LfSov /usr/local/etc/valkey/valkey.conf https://dimpt.site/docker/valkey/valkey.conf \
+ && curl -LfSo /usr/local/etc/valkey/valkey.conf https://dimpt.site/docker/valkey/valkey.conf \
  && rm -rf /var/cache/apk/*
