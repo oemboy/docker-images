@@ -16,8 +16,6 @@
     <description>alpine-dnsmasq with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
         <platform.docker.tag>alpine-webproc</platform.docker.tag>
     </properties>
 
