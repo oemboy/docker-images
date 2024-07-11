@@ -13,10 +13,10 @@
     <artifactId>alpine-nodejs-20</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>alpine-nodejs</name>
-    <description>alpine-nodejs 20.9.0 with font, net-tools, timezone, C.UTF-8</description>
+    <description>alpine-nodejs with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>20.12.2</platform.docker.tag>
+        <platform.docker.tag>20.15.1</platform.docker.tag>
     </properties>
 
     <profiles>
