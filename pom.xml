@@ -23,6 +23,7 @@
         <module>team-server</module>
         <module>team-agent</module>
         <module>alpine-dnsmasq</module>
+        <module>alpine-docker</module>
         <module>alpine-jdk8</module>
         <module>alpine-jre8</module>
         <module>alpine-jdk11</module>
