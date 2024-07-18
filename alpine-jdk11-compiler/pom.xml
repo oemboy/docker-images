@@ -16,7 +16,7 @@
     <description>alpine-jdk11 with font, net-tools, timezone, C.UTF-8, maven</description>
 
     <properties>
-        <platform.docker.tag>11.0.23</platform.docker.tag>
+        <platform.docker.tag>11.0.24</platform.docker.tag>
     </properties>
 
     <profiles>
