@@ -13,10 +13,10 @@
     <artifactId>alpine-jre17</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>alpine-jre17</name>
-    <description>alpine-jre17 with font, net-tools, timezone, C.UTF-8</description>
+    <description>alpine-jre17 with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>17.0.11</platform.docker.tag>
+        <platform.docker.tag>17.0.12</platform.docker.tag>
     </properties>
 
     <profiles>
