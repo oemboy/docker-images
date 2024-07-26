@@ -23,6 +23,18 @@
 + timezone
 + busybox-extras net-tools curl
 
+# alpine-jre17
+
++ support chinese font: simhei.ttf
++ timezone
++ busybox-extras net-tools curl
+
+# alpine-jdk17
+
++ support chinese font: simhei.ttf
++ timezone
++ busybox-extras net-tools curl
+
 # team-agent
 
 + support chinese font: simhei.ttf

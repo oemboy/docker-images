@@ -1,6 +1,6 @@
-FROM openresty/openresty:1.25.3.1-alpine-apk
+FROM openresty/openresty:1.25.3.2-alpine-apk
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="openresty/openresty:1.25.3.1-alpine"
+LABEL origin="openresty/openresty:1.25.3.2-alpine-apk"
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8
