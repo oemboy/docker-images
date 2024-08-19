@@ -46,6 +46,7 @@
         <module>alpine-sshd</module>
         <module>alpine-openresty</module>
         <module>jenkins</module>
+        <module>all-in-one</module>
     </modules>
 
     <build>
