@@ -16,4 +16,7 @@ RUN apt-get update \
 ENV TZ=Asia/Shanghai
 
 COPY ./run-redis.sh /services/run-redis.sh
+COPY  ./run-services.sh /run-services.sh
+RUN ["chmod", "+x", "/services/run-services.sh"]
 RUN ["chmod", "+x", "/services/run-redis.sh"]
+
