@@ -21,7 +21,7 @@
 
     <profiles>
         <profile>
-            <id>alpine-nodejs</id>
+            <id>alpine-nodejs-18</id>
             <build>
                 <plugins>
                     <plugin>
