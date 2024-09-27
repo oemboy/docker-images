@@ -10,10 +10,9 @@ COPY ./conf /etc/dnsmasq.d/
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.17/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add tzdata busybox-extras net-tools curl dnsmasq util-linux bind-tools \
+ && apk add bind-tools busybox-extras dnsmasq fontconfig net-tools ttf-dejavu tzdata util-linux \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
- && apk add ttf-dejavu fontconfig \
 # && curl -LfSo /root/webproc_0.4.0_linux_amd64.gz https://github.com/jpillora/webproc/releases/download/v0.4.0/webproc_0.4.0_linux_amd64.gz \
 # && gzip -d /root/webproc_0.4.0_linux_amd64.gz -C /root \
 # && rm -rf /root/webproc_0.4.0_linux_amd64.gz \

@@ -5,10 +5,9 @@ LABEL maintainer="chenbz35@dimpt.com"
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add busybox-extras curl net-tools tzdata util-linux \
+ && apk add busybox-extras curl fontconfig net-tools ttf-dejavu tzdata util-linux \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
- && apk add ttf-dejavu fontconfig \
  && mkdir -p /usr/local/etc/redis \
  && curl -LfSo /usr/local/etc/redis/redis.conf https://dimpt.site/docker/redis/redis.conf \
  && apk del curl \

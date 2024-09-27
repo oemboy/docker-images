@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.20
 LABEL maintainer="chenbz35@dimpt.com"
 
 ARG PASSWORD=admin
@@ -6,10 +6,9 @@ ARG PASSWORD=admin
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add tzdata busybox-extras net-tools util-linux wget openssh openrc \
+ && apk add busybox-extras fontconfig net-tools openrc openssh ttf-dejavu tzdata util-linux wget \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
- && apk add ttf-dejavu fontconfig \
  && sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config \
  && sed -i "s/AllowTcpForwarding.*/AllowTcpForwarding yes/g" /etc/ssh/sshd_config \
  && sed -i "s/X11Forwarding.*/X11Forwarding yes/g" /etc/ssh/sshd_config \

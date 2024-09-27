@@ -9,7 +9,7 @@ COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y tzdata fontconfig fonts-dejavu vim iputils-ping curl telnet net-tools unzip \
+    && apt-get install -y curl fontconfig fonts-dejavu iputils-ping net-tools telnet tzdata unzip vim \
     && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
     && rm -rf /var/lib/apt/lists/*
 

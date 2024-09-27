@@ -8,7 +8,7 @@ COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y vim  iputils-ping curl telnet net-tools tzdata fontconfig \
+    && apt-get install -y fontconfig iputils-ping net-tools telnet tzdata vim \
     && rm -rf /var/lib/apt/lists/*
 
 ENV TZ=Asia/Shanghai

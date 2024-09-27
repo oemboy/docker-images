@@ -11,10 +11,9 @@ LABEL origin="eclipse-temurin:11.0.24_8-jre-alpine"
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add tzdata busybox-extras net-tools curl util-linux wget \
+ && apk add busybox-extras curl fontconfig net-tools ttf-dejavu tzdata util-linux wget \
  && echo "Asia/Shanghai" > /etc/timezone \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
- && apk add ttf-dejavu fontconfig \
  && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && rm -rf /var/cache/apk/*
 

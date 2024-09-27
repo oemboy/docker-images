@@ -8,7 +8,7 @@ COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y tzdata fontconfig fonts-dejavu git redis-server vim iputils-ping curl net-tools \
+    && apt-get install -y curl fontconfig fonts-dejavu git iputils-ping net-tools redis-server tzdata vim \
     && rm -rf /var/lib/apt/lists/*
 
 ENV TZ=Asia/Shanghai

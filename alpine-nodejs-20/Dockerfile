@@ -5,10 +5,9 @@ LABEL maintainer="chenbz35@dimpt.com"
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add tzdata busybox-extras net-tools util-linux\
+ && apk add busybox-extras fontconfig net-tools ttf-dejavu tzdata util-linux\
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
- && apk add ttf-dejavu fontconfig \
  && rm -rf /var/cache/apk/* \
  && npm install -g pnpm --registry=https://registry.npmmirror.com \
  && npm install -g nnrm  --registry=https://registry.npmmirror.com \

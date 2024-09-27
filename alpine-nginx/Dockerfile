@@ -8,10 +8,9 @@ WORKDIR /root/
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add tzdata net-tools wget util-linux \
+ && apk add curl fontconfig net-tools ttf-dejavu tzdata util-linux wget \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
- && apk add ttf-dejavu fontconfig \
  && apk del curl \
  && rm -rf /var/cache/apk/*
 
