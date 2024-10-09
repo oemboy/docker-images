@@ -16,7 +16,7 @@
     <description>alpine-nodejs with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>20.17.0</platform.docker.tag>
+        <platform.docker.tag>20.18.0</platform.docker.tag>
     </properties>
 
     <profiles>
