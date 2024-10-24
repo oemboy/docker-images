@@ -1,4 +1,4 @@
-FROM amazoncorretto:11.0.24-alpine
+FROM amazoncorretto:11.0.25-alpine
 # FROM jdk-11.0.19_7_openj9-0.38.0-alpine-slim #alpine 3.14 # no scan
 LABEL maintainer="chenbz35@dimpt.com"
 LABEL origin="amazoncorretto:11.0.23-alpine"
@@ -6,7 +6,7 @@ LABEL origin="amazoncorretto:11.0.23-alpine"
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add busybox-extras curl fontconfig net-tools ttf-dejavu tzdata util-linux wget \

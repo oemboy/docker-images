@@ -16,7 +16,7 @@
     <description>alpine-jdk8 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>8u422</platform.docker.tag>
+        <platform.docker.tag>8u432</platform.docker.tag>
     </properties>
 
     <profiles>
