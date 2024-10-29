@@ -1,4 +1,4 @@
-FROM dimpt.site:8181/platform/alpine-jre11:11.0.23 as prepare
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.23 AS prepare
 
 ARG PKG_VERSION=zookeeper-3.8.4
 ARG ARCHIVE_NAME=apache-zookeeper-3.8.4-bin
@@ -33,8 +33,10 @@ EXPOSE ${ZK_CLIENT_PORT} 2888 3888
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache bash \
+    && apk add --no-cache bash su-exec \
     && apk del curl \
+    && addgroup -S -g 1000 devops \
+    && adduser -S -G devops -u 1000 devops \
     && rm -rf /var/cache/apk/*
 
 WORKDIR ${ZK_HOME}
