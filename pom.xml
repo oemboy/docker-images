@@ -36,6 +36,7 @@
         <module>openj9-jre17</module>
         <module>alpine-jdk21</module>
         <module>alpine-jre21</module>
+        <module>alpine-nodejs-22</module>
         <module>alpine-nodejs-20</module>
         <module>alpine-nodejs-18</module>
         <module>alpine-nodejs-16</module>
