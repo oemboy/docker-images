@@ -39,7 +39,6 @@
         <module>alpine-nodejs-22</module>
         <module>alpine-nodejs-20</module>
         <module>alpine-nodejs-18</module>
-        <module>alpine-nodejs-16</module>
         <module>alpine-redis</module>
         <module>alpine-valkey</module>
         <module>alpine-nginx</module>
