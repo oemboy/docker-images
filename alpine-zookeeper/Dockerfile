@@ -1,4 +1,4 @@
-FROM dimpt.site:8181/platform/alpine-jre11:11.0.23 AS prepare
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.25 AS prepare
 
 ARG PKG_VERSION=zookeeper-3.8.4
 ARG ARCHIVE_NAME=apache-zookeeper-3.8.4-bin
@@ -17,7 +17,7 @@ RUN wget -q "${ZOO_URL}" \
     && echo -e "dataDir=${ZK_HOME}/data" >> ${ZK_HOME}/conf/zoo.cfg
 
 
-FROM dimpt.site:8181/platform/alpine-jre11:11.0.23
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.25
 LABEL maintainer="chenbz35@dimpt.com"
 
 ARG ZK_HOME=/opt/zookeeper
@@ -35,8 +35,6 @@ RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash su-exec \
     && apk del curl \
-    && addgroup -S -g 1000 devops \
-    && adduser -S -G devops -u 1000 devops \
     && rm -rf /var/cache/apk/*
 
 WORKDIR ${ZK_HOME}
