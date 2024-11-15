@@ -20,8 +20,8 @@
 
     <modules>
         <module>mysql-debian</module>
-        <module>team-server</module>
-        <module>team-agent</module>
+        <module>teamcity-server</module>
+        <module>teamcity-agent</module>
         <module>alpine-dnsmasq</module>
         <module>alpine-docker</module>
         <module>alpine-jdk8</module>

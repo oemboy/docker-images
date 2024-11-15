@@ -10,18 +10,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>team-agent</artifactId>
+    <artifactId>teamcity-server</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>team-agent</name>
-    <description>team-agent with font, net-tools, timezone</description>
+    <name>team-server</name>
+    <description>team-server with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>2024.03.3-linux</platform.docker.tag>
+        <platform.docker.tag>2023.05-linux</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>team-agent</id>
+            <id>team-server</id>
             <build>
                 <plugins>
                     <plugin>
