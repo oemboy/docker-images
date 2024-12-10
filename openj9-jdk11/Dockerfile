@@ -1,4 +1,4 @@
-FROM ibm-semeru-runtimes:open-11.0.19_7-jdk-jammy
+FROM ibm-semeru-runtimes:open-11.0.25_9-jdk-jammy
 LABEL maintainer="chenbz35@dimpt.com"
 
 #USER root

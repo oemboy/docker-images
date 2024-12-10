@@ -1,4 +1,4 @@
-FROM ibm-semeru-runtimes:open-11.0.21_9-jre-jammy
+FROM ibm-semeru-runtimes:open-11.0.25_9-jre-jammy
 #adoptopenjdk/openjdk11-openj9:x86_64-alpine-jre-11.0.20_8_openj9-0.40.0
 LABEL maintainer="chenbz35@dimpt.com"
 
