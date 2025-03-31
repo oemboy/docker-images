@@ -1,11 +1,11 @@
-FROM nginx:1.26.2-alpine
+FROM nginx:1.26.3-alpine
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="nginx:1.26.2-alpine"
+LABEL origin="nginx:1.26.3-alpine"
 
 WORKDIR /root/
 # ENV LANG=C.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.20/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add curl fontconfig net-tools su-exec ttf-dejavu tzdata util-linux wget \

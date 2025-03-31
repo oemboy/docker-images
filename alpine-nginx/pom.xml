@@ -16,7 +16,7 @@
     <description>alpine-nginx with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>1.26.2</platform.docker.tag>
+        <platform.docker.tag>1.26.3</platform.docker.tag>
     </properties>
 
     <profiles>
