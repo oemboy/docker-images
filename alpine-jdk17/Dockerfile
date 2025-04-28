@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.14-alpine
+FROM amazoncorretto:17.0.15-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8

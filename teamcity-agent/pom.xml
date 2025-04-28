@@ -16,7 +16,7 @@
     <description>team-agent with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>2024.07.3-linux</platform.docker.tag>
+        <platform.docker.tag>2025.03-linux</platform.docker.tag>
     </properties>
 
     <profiles>
