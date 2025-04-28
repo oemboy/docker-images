@@ -9,7 +9,7 @@ COPY ./run-redis.sh /services/run-redis.sh
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y curl fontconfig fonts-dejavu git iputils-ping net-tools redis-server tzdata vim \
+    && apt-get install -y curl fontconfig fonts-dejavu git iputils-ping net-tools openjdk-17-jdk redis-server tzdata vim \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir /logs \
     && chown -R redis:adm /var/log/redis \
