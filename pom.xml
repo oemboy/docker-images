@@ -40,6 +40,7 @@
         <module>alpine-nodejs-20</module>
         <module>alpine-nodejs-18</module>
         <module>alpine-redis</module>
+        <module>alpine-redis8</module>
         <module>alpine-valkey</module>
         <module>alpine-nginx</module>
         <module>alpine-zookeeper</module>

@@ -1,8 +1,8 @@
-FROM node:20.19.2-alpine
+FROM node:20.19.4-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add busybox-extras fontconfig net-tools ttf-dejavu tzdata util-linux\
