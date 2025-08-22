@@ -1,9 +1,9 @@
-FROM alpine:3.20
+FROM alpine:3.22
 LABEL maintainer="chenbz35@dimpt.com"
 
 ARG PASSWORD=admin
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.19/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add busybox-extras fontconfig net-tools openrc openssh ttf-dejavu tzdata util-linux wget \
