@@ -16,7 +16,7 @@
     <description>openj9-jre17 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>17.0.13</platform.docker.tag>
+        <platform.docker.tag>17.0.16</platform.docker.tag>
     </properties>
 
     <profiles>

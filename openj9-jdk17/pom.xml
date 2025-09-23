@@ -10,18 +10,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-jre8</artifactId>
+    <artifactId>openj9-jdk17</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alpine-jre8</name>
-    <description>alpine-jre8 with font, net-tools, timezone, C.UTF-8</description>
+    <name>openj9-jdk17</name>
+    <description>openj9-jdk17 with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>8u412</platform.docker.tag>
+        <platform.docker.tag>17.0.16</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-jre8</id>
+            <id>openj9-jdk17</id>
             <build>
                 <plugins>
                     <plugin>

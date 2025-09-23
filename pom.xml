@@ -24,30 +24,21 @@
         <module>teamcity-agent</module>
         <module>alpine-dnsmasq</module>
         <module>alpine-docker</module>
-        <module>alpine-jdk8</module>
-        <module>alpine-jre8</module>
-        <module>alpine-jdk11</module>
-        <module>alpine-jdk11-compiler</module>
-        <module>alpine-jre11</module>
         <module>alpine-jdk17</module>
         <module>alpine-jre17</module>
-        <module>openj9-jdk11</module>
-        <module>openj9-jre11</module>
+        <module>openj9-jdk17</module>
         <module>openj9-jre17</module>
         <module>alpine-jdk21</module>
         <module>alpine-jre21</module>
         <module>alpine-nodejs-22</module>
         <module>alpine-nodejs-20</module>
-        <module>alpine-nodejs-18</module>
         <module>alpine-redis</module>
         <module>alpine-redis8</module>
-        <module>alpine-valkey</module>
         <module>alpine-nginx</module>
         <module>alpine-zookeeper</module>
         <module>alpine-sshd</module>
         <module>alpine-openresty</module>
         <module>jenkins</module>
-        <module>all-in-one</module>
     </modules>
 
     <build>
