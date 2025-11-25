@@ -16,6 +16,10 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mir
  && echo "Asia/Shanghai" > /etc/timezone \
  && wget -q -O /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && addgroup -S -g 1000 devops \
- && adduser -S -G devops -u 1000 devops
+ && adduser -S -G devops -u 1000 devops \
+ && pip install --upgrade --no-cache-dir \
+      -i https://pypi.tuna.tsinghua.edu.cn/simple \
+      --trusted-host pypi.tuna.tsinghua.edu.cn \
+      pip
 
 ENV TZ=Asia/Shanghai
