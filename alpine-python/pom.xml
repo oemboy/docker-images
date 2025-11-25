@@ -10,18 +10,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-jdk17</artifactId>
+    <artifactId>alpine-python</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alpine-jdk17</name>
-    <description>alpine-jdk17 with font, net-tools, timezone, C.UTF-8</description>
+    <name>alpine-python</name>
+    <description>alpine-python with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>17.0.17</platform.docker.tag>
+        <platform.docker.tag>3.14.0-alpine</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-jdk17</id>
+            <id>alpine-python</id>
             <build>
                 <plugins>
                     <plugin>
@@ -44,11 +44,6 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-                                        <buildx>
-                                            <platforms>
-                                                <platform>${docker.platforms}</platform>
-                                            </platforms>
-                                        </buildx>
                                     </build>
                                 </image>
                             </images>

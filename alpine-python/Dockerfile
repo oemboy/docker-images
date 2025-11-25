@@ -1,5 +1,4 @@
-FROM eclipse-temurin:17.0.17_10-jre-alpine
-#azul/zulu-openjdk-alpine:17.0.17-jre
+FROM python:3.14.0-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \

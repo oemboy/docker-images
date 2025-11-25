@@ -24,6 +24,7 @@
         <module>teamcity-agent</module>
         <module>alpine-dnsmasq</module>
         <module>alpine-docker</module>
+        <module>alpine-python</module>
         <module>alpine-jdk17</module>
         <module>alpine-jre17</module>
         <module>openj9-jdk17</module>
