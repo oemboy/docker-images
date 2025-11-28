@@ -1,7 +1,7 @@
-FROM dimpt.site:8181/platform/alpine-jre11:11.0.25 AS prepare
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.29 AS prepare
 
-ARG PKG_VERSION=zookeeper-3.8.4
-ARG ARCHIVE_NAME=apache-zookeeper-3.8.4-bin
+ARG PKG_VERSION=zookeeper-3.8.5
+ARG ARCHIVE_NAME=apache-zookeeper-3.8.5-bin
 ARG ZOO_URL=https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/${PKG_VERSION}/${ARCHIVE_NAME}.tar.gz
 
 ARG ZK_HOME=/opt/zookeeper
@@ -17,7 +17,7 @@ RUN wget -q "${ZOO_URL}" \
     && echo -e "dataDir=${ZK_HOME}/data" >> ${ZK_HOME}/conf/zoo.cfg
 
 
-FROM dimpt.site:8181/platform/alpine-jre11:11.0.25
+FROM dimpt.site:8181/platform/alpine-jre11:11.0.29
 LABEL maintainer="chenbz35@dimpt.com"
 
 ARG ZK_HOME=/opt/zookeeper

@@ -10,18 +10,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-zookeeper</artifactId>
+    <artifactId>alpine-jre11</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>alpine-zookeeper</name>
-    <description>alpine-zookeeper with font, net-tools, timezone, C.UTF-8</description>
+    <name>alpine-jre11</name>
+    <description>alpine-jre11 with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>3.8.5</platform.docker.tag>
+        <platform.docker.tag>11.0.29</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-zookeeper</id>
+            <id>alpine-jre11</id>
             <build>
                 <plugins>
                     <plugin>
@@ -44,12 +44,12 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-                                        <buildx>
-                                            <platforms>
-                                                <platform>${docker.platforms}</platform>
-                                            </platforms>
-                                        </buildx>
                                     </build>
+                                    <run>
+                                        <extraHosts>
+                                            <extraHost>dimpt.site:10.100.240.25</extraHost>
+                                        </extraHosts>
+                                    </run>
                                 </image>
                             </images>
                         </configuration>

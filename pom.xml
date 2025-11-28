@@ -26,6 +26,7 @@
         <module>alpine-docker</module>
         <module>alpine-python</module>
         <module>alpine-jdk17</module>
+        <module>alpine-jre11</module>
         <module>alpine-jre17</module>
         <module>openj9-jdk17</module>
         <module>openj9-jre17</module>
