@@ -11,9 +11,9 @@ RUN wget -q "${ZOO_URL}" \
     && tar -xzf ${ARCHIVE_NAME}.tar.gz -C /opt \
     && mv /opt/${ARCHIVE_NAME} "${ZK_HOME}" \
     && mv ${ZK_HOME}/conf/zoo_sample.cfg ${ZK_HOME}/conf/zoo.cfg \
-    && mkdir  "${ZK_HOME}/data"  \
+    && mkdir  "${ZK_HOME}/data" "${ZK_HOME}/logs" \
     && sed -i '/^dataDir/c #dataDir' ${ZK_HOME}/conf/zoo.cfg \
-    && echo "1"  > /opt/zookeeper/data/myid \
+    && echo "1"  > ${ZK_HOME}/data/myid \
     && echo -e "dataDir=${ZK_HOME}/data" >> ${ZK_HOME}/conf/zoo.cfg
 
 
@@ -35,7 +35,10 @@ RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash su-exec \
     && apk del curl \
+    && chown -R devops:devops ${ZK_HOME} \
     && rm -rf /var/cache/apk/*
 
 WORKDIR ${ZK_HOME}
-ENTRYPOINT ["zkServer.sh", "start-foreground"]
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["zkServer.sh", "start-foreground"]
