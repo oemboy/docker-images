@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-        <module>mysql-debian</module>
+        <module>mysql</module>
         <module>teamcity-server</module>
         <module>teamcity-agent</module>
         <module>alpine-dnsmasq</module>

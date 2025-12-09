@@ -10,18 +10,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>mysql-debian</artifactId>
+    <artifactId>mysql</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>mysql-debian</name>
-    <description>mysql-debian with font, net-tools, timezone</description>
+    <name>mysql</name>
+    <description>mysql with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>8.4.2-bullseye</platform.docker.tag>
+        <platform.docker.tag>8.4.7-oracle9</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>mysql-debian</id>
+            <id>mysql</id>
             <build>
                 <plugins>
                     <plugin>
