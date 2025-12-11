@@ -7,11 +7,12 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mir
  && apk add --no-cache \
     busybox-extras \
     fontconfig \
+    font-noto-cjk \
     net-tools \
     su-exec \
     ttf-dejavu \
     tzdata \
-    util-linux \
+    util-linux vim \
     wget \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
