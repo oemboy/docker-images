@@ -33,8 +33,6 @@ EXPOSE ${ZK_CLIENT_PORT} 2888 3888
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache bash su-exec \
-    && apk del curl \
     && chown -R devops:devops ${ZK_HOME} \
     && rm -rf /var/cache/apk/*
 
