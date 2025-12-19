@@ -7,7 +7,7 @@ LABEL maintainer="chenbz35@dimpt.com"
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add busybox-extras curl fontconfig font-noto-cjk htop net-tools su-exec ttf-dejavu tzdata util-linux vim wget \
+ && apk add busybox-extras curl fontconfig font-noto-cjk htop net-tools su-exec ttf-dejavu tzdata util-linux wget \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && curl -LfSo /async-profiler-4.0-linux-x64.tar.gz https://dimpt.site/docker/async-profiler-4.0-linux-x64.tar.gz \

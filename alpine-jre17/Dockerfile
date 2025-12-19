@@ -5,7 +5,7 @@ LABEL maintainer="chenbz35@dimpt.com"
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
  && apk update && apk upgrade \
  && apk add --no-cache \
-    fontconfig vim \
+    fontconfig \
     font-noto-cjk \
     net-tools \
     su-exec \
