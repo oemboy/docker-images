@@ -23,20 +23,23 @@ LABEL maintainer="chenbz35@dimpt.com"
 ARG ZK_HOME=/opt/zookeeper
 ARG ZK_CLIENT_PORT=2181
 
-ENV PATH=$PATH:$ZK_HOME/bin
-ENV ZK_HOME=${ZK_HOME}
-ENV TZ=Asia/Shanghai
+ENV ZK_HOME=${ZK_HOME} \
+    PATH=$PATH:${ZK_HOME}/bin \
+    TZ=Asia/Shanghai
 
 COPY --from=prepare ${ZK_HOME} ${ZK_HOME}
+COPY docker-entrypoint.sh /
+
+# 合并所有系统层面的操作：更新、安装、权限、清理
+RUN apk add --no-cache bash \
+    && chown -R devops:devops ${ZK_HOME} \
+    && chmod +x /docker-entrypoint.sh
+
+# 定义工作目录和挂载点（必须在 chown 之后）
+WORKDIR ${ZK_HOME}
 VOLUME ["${ZK_HOME}/data", "${ZK_HOME}/logs", "${ZK_HOME}/conf"]
+
 EXPOSE ${ZK_CLIENT_PORT} 2888 3888
 
-RUN apk update \
-    && apk upgrade \
-    && chown -R devops:devops ${ZK_HOME} \
-    && rm -rf /var/cache/apk/*
-
-WORKDIR ${ZK_HOME}
-COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["zkServer.sh", "start-foreground"]
