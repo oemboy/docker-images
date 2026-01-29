@@ -16,12 +16,12 @@
     <description>alpine-nodejs with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>22.11.0</platform.docker.tag>
+        <platform.docker.tag>24.13.0</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-nodejs-22</id>
+            <id>alpine-nodejs-24</id>
             <build>
                 <plugins>
                     <plugin>

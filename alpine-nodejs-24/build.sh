@@ -1,0 +1,3 @@
+#!/bin/bash
+docker build -t dimpt.site:8180/platform/alpine-nodejs:24.13.0  --push .
+#docker build -t bingzic/alpine-nodejs:24.13.0 --push .
