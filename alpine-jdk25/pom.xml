@@ -10,17 +10,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-jdk17</artifactId>
-    <name>alpine-jdk17</name>
-    <description>alpine-jdk17 with font, net-tools, timezone, C.UTF-8</description>
+    <artifactId>alpine-jdk25</artifactId>
+    <name>alpine-jdk25</name>
+    <description>alpine-jdk25 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>17.0.17</platform.docker.tag>
+        <platform.docker.tag>latest</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-jdk17</id>
+            <id>alpine-jdk25</id>
             <build>
                 <plugins>
                     <plugin>
