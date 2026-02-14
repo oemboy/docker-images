@@ -2,7 +2,8 @@ FROM redis:6.2.21-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 COPY gosu /usr/local/bin/gosu
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community' > /etc/apk/repositories \
+RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main' > /etc/apk/repositories \
+ && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community' >> /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add curl tzdata \
@@ -10,8 +11,6 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main\nhttps://mir
  && echo "Asia/Shanghai" > /etc/timezone \
  && mkdir -p /usr/local/etc/redis \
  && mkdir -p /usr/share/fonts \
- && curl -LfSo /usr/local/etc/redis/redis.conf https://dimpt.site/docker/redis/redis.conf \
- && curl -LfSo /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && apk del curl \
  && chmod +x /usr/local/bin/gosu \
  && rm -rf /var/cache/apk/*
@@ -19,4 +18,3 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main\nhttps://mir
 ENV TZ=Asia/Shanghai
 ENV GOSU_VERSION=1.19
 
-CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
