@@ -1,8 +1,8 @@
-FROM eclipse-temurin:17.0.17_10-jre-alpine
-#azul/zulu-openjdk-alpine:17.0.17-jre
+FROM eclipse-temurin:17.0.18_8-jre-alpine
+#azul/zulu-openjdk-alpine:17.0.18-jre
 LABEL maintainer="chenbz35@dimpt.com"
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' > /etc/apk/repositories \
  && apk update && apk upgrade \
  && apk add --no-cache \
     fontconfig \
