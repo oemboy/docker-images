@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-nodejs-22</artifactId>
+    <artifactId>alpine-nodejs-24</artifactId>
     <name>alpine-nodejs</name>
     <description>alpine-nodejs with font, net-tools, timezone</description>
 

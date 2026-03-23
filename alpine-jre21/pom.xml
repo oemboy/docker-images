@@ -11,12 +11,11 @@
     </parent>
     <packaging>pom</packaging>
     <artifactId>alpine-jre21</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>alpine-jre21</name>
     <description>alpine-jre21 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>latest</platform.docker.tag>
+        <platform.docker.tag>21.0.10</platform.docker.tag>
     </properties>
 
     <profiles>

@@ -1,10 +1,10 @@
-FROM amazoncorretto:17.0.17-alpine
+FROM amazoncorretto:17.0.18-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
+RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' > /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add busybox-extras curl fontconfig font-noto-cjk htop net-tools su-exec ttf-dejavu tzdata util-linux wget \
