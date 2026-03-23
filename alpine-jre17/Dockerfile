@@ -4,17 +4,16 @@ LABEL maintainer="chenbz35@dimpt.com"
 
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' > /etc/apk/repositories \
  && apk update && apk upgrade \
- && apk add --no-cache \
-    fontconfig \
-    font-noto-cjk \
+ && apk add --no-cache coreutils \
+    fontconfig htop \
     net-tools \
     su-exec \
-    ttf-dejavu \
     tzdata \
     wget \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
- && echo "Asia/Shanghai" > /etc/timezone \
+ && mkdir -p /usr/share/fonts/ \
  && wget -q -O /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
+ && fc-cache -fv \
  && addgroup -S -g 1000 devops \
  && adduser -S -G devops -u 1000 devops
 

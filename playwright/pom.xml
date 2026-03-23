@@ -10,17 +10,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>alpine-nodejs-24</artifactId>
-    <name>alpine-nodejs</name>
-    <description>alpine-nodejs with font, net-tools, timezone</description>
+    <artifactId>playwright</artifactId>
+    <name>playwright</name>
+    <description>playwright with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>24.14.0</platform.docker.tag>
+        <platform.docker.tag>v1.58.0-noble-jdk21</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>alpine-nodejs-24</id>
+            <id>playwright</id>
             <build>
                 <plugins>
                     <plugin>
