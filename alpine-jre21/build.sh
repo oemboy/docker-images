@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --add-host dimpt.site:10.100.240.25 -t dimpt.site:8180/platform/alpine-jre21:latest --push .
+docker build --add-host dimpt.site:10.100.240.25 -t dimpt.site:8180/platform/alpine-jre21:21.0.10 --push .

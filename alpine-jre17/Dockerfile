@@ -15,6 +15,7 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main\nhttps://mir
  && wget -q -O /usr/share/fonts/simsun.ttf https://dimpt.site/docker/simsun.ttf \
  && fc-cache -fv \
  && addgroup -S -g 1000 devops \
- && adduser -S -G devops -u 1000 devops
+ && adduser -S -G devops -u 1000 devops \
+ && rm -rf /var/cache/apk/*
 
 ENV TZ=Asia/Shanghai

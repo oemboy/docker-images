@@ -13,7 +13,7 @@
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <docker-maven-version>0.48.0</docker-maven-version>
+        <docker-maven-version>0.48.1</docker-maven-version>
         <docker.platforms>linux/amd64,linux/arm64</docker.platforms>
         <platform.docker.tag>latest</platform.docker.tag>
     </properties>
@@ -25,14 +25,15 @@
         <module>alpine-dnsmasq</module>
         <module>alpine-docker</module>
         <module>alpine-python</module>
+        <module>alpine-jdk11</module>
         <module>alpine-jdk17</module>
+        <module>alpine-jdk21</module>
+        <module>alpine-jdk25</module>
         <module>alpine-jre11</module>
         <module>alpine-jre17</module>
+        <module>alpine-jre21</module>
         <module>openj9-jdk17</module>
         <module>openj9-jre17</module>
-        <module>alpine-jdk21</module>
-        <module>alpine-jre21</module>
-        <module>alpine-jdk25</module>
         <module>alpine-nodejs-24</module>
         <module>alpine-nodejs-20</module>
         <module>alpine-redis</module>
