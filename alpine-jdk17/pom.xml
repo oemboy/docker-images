@@ -15,7 +15,7 @@
     <description>alpine-jdk17 with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>17.0.18</platform.docker.tag>
+        <platform.docker.tag>17.0.19</platform.docker.tag>
     </properties>
 
     <profiles>

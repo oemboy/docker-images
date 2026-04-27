@@ -1,4 +1,4 @@
-FROM amazoncorretto:21.0.10-alpine
+FROM amazoncorretto:21.0.11-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 COPY NotoSansCJK-Regular.ttc /usr/share/fonts/noto/

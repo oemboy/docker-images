@@ -1,4 +1,4 @@
-FROM amazoncorretto:11.0.30-alpine
+FROM amazoncorretto:11.0.31-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 LABEL origin="amazoncorretto:11.0.30-alpine"
 

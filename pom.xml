@@ -29,7 +29,6 @@
         <module>alpine-jdk17</module>
         <module>alpine-jdk21</module>
         <module>alpine-jdk25</module>
-        <module>alpine-jre11</module>
         <module>alpine-jre17</module>
         <module>alpine-jre21</module>
         <module>openj9-jdk17</module>
