@@ -10,17 +10,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>teamcity-agent</artifactId>
-    <name>team-agent</name>
-    <description>team-agent with font, net-tools, timezone</description>
+    <artifactId>elasticsearch</artifactId>
+    <name>elasticsearch</name>
+    <description>elasticsearch with plugins, timezone</description>
 
     <properties>
-        <platform.docker.tag>2025.03-linux</platform.docker.tag>
+        <platform.docker.tag>9.3.4</platform.docker.tag>
     </properties>
 
     <profiles>
         <profile>
-            <id>team-agent</id>
+            <id>elasticsearch</id>
             <build>
                 <plugins>
                     <plugin>

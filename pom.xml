@@ -43,6 +43,7 @@
         <module>alpine-openresty</module>
         <module>jenkins</module>
         <module>playwright</module>
+        <module>elasticsearch</module>
     </modules>
 
     <build>
