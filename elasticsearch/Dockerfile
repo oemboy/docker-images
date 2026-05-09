@@ -10,6 +10,7 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
     ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-ik/stable/elasticsearch-analysis-ik-9.3.4.zip && \
     ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-pinyin/stable/elasticsearch-analysis-pinyin-9.3.4.zip && \
+    ./bin/elasticsearch-plugin install --batch ingest-attachment && \
     chown -R 0:0 /usr/share/elasticsearch && \
     chmod -R g+rwX /usr/share/elasticsearch
 
