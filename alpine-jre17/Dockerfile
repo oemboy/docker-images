@@ -1,5 +1,4 @@
-FROM eclipse-temurin:17.0.18_8-jre-alpine
-#azul/zulu-openjdk-alpine:17.0.18-jre
+FROM eclipse-temurin:17.0.19_10-jre-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' > /etc/apk/repositories \
