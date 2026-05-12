@@ -15,7 +15,7 @@
     <description>elasticsearch with plugins, timezone</description>
 
     <properties>
-        <platform.docker.tag>9.3.4</platform.docker.tag>
+        <platform.docker.tag>9.4.0</platform.docker.tag>
     </properties>
 
     <profiles>
