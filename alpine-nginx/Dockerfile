@@ -1,4 +1,4 @@
-FROM nginx:1.30.1-alpine
+FROM nginx:1.30.2-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 LABEL origin="nginx:1.30.1-alpine"
 

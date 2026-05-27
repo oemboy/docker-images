@@ -4,7 +4,8 @@ LABEL maintainer="chenbz35@dimpt.com"
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' > /etc/apk/repositories \
+RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/repositories \
+ && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' >> /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add curl fontconfig net-tools su-exec tzdata coreutils wget \
