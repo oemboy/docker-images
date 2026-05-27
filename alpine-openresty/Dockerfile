@@ -1,14 +1,14 @@
-FROM openresty/openresty:1.25.3.2-alpine-apk
+FROM openresty/openresty:1.29.2.5-1-alpine-slim
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="openresty/openresty:1.25.3.2-alpine-apk"
+LABEL origin="openresty/openresty:1.29.2.5-1-alpine-slim"
 
 WORKDIR /root/
-# ENV LANG=C.UTF-8
 
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.18/community' > /etc/apk/repositories \
+RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/repositories \
+ && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' >> /etc/apk/repositories \
  && apk update \
  && apk upgrade \
- && apk add fontconfig net-tools su-exec ttf-dejavu tzdata util-linux \
+ && apk add fontconfig net-tools su-exec tzdata \
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
  && addgroup -S -g 1000 devops \
