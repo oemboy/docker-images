@@ -1,9 +1,8 @@
-FROM alpine:3.22
+FROM alpine:3.23
 LABEL maintainer="chenbz35@dimpt.com"
 
-ARG PASSWORD=admin
-
-RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/community' > /etc/apk/repositories \
+RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/repositories \
+ && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' >> /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add busybox-extras fontconfig net-tools openrc openssh ttf-dejavu tzdata util-linux wget \
@@ -15,11 +14,10 @@ RUN echo -e 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.22/main\nhttps://mir
  && mkdir -p /root/.ssh \
  && chmod 700 /root/.ssh/ \
  && ssh-keygen -A \
- && rm -rf /var/cache/apk/* \
- && echo "root:$PASSWORD" | chpasswd
+ && rm -rf /var/cache/apk/*
 
 EXPOSE 22
 
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["sh", "-c", "echo \"root:${PASSWORD:-admin}\" | chpasswd && /usr/sbin/sshd -D"]
 
 
