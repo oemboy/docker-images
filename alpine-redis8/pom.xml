@@ -15,7 +15,7 @@
     <description>alpine-redis with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>8.2.1</platform.docker.tag>
+        <platform.docker.tag>8.8.0</platform.docker.tag>
     </properties>
 
     <profiles>

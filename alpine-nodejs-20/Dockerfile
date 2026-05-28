@@ -13,7 +13,6 @@ RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/rep
  && corepack enable npm \
  && npm install -g pnpm --registry=https://registry.npmmirror.com \
  && npm install -g nnrm  --registry=https://registry.npmmirror.com \
- && npm update -g \
  && nnrm use taobao \
  && nyrm use taobao \
  && npm cache clean --force
