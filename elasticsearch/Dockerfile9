@@ -1,4 +1,4 @@
-FROM elasticsearch:8.19.17
+FROM elasticsearch:9.4.2
 LABEL maintainer="chenbz35@dimpt.com"
 USER root
 
@@ -7,10 +7,10 @@ USER root
 # 3. 核心：全部设为 0:0，并确保组(Group)有写入权
 # 这样无论容器以 UID 1000 还是随机 UID 启动，只要它在 GID 0 里就能跑
 ENV TZ=Asia/Shanghai
-RUN apt update -y && \
+RUN microdnf update -y && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
-    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-ik/stable/elasticsearch-analysis-ik-8.19.17.zip && \
-    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-pinyin/stable/elasticsearch-analysis-pinyin-8.19.17.zip && \
+    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-ik/stable/elasticsearch-analysis-ik-9.4.2.zip && \
+    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-pinyin/stable/elasticsearch-analysis-pinyin-9.4.2.zip && \
     chown -R 0:0 /usr/share/elasticsearch && \
     chmod -R g+rwX /usr/share/elasticsearch
 
