@@ -1,4 +1,4 @@
-FROM redis:6.2.23-alpine
+FROM redis:6.2.24-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 COPY redis.conf /etc/redis/redis.conf

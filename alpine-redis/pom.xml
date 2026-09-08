@@ -15,7 +15,7 @@
     <description>alpine-redis with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>6.2.23</platform.docker.tag>
+        <platform.docker.tag>6.2.24</platform.docker.tag>
     </properties>
 
     <profiles>
