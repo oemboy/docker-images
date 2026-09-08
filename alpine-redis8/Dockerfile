@@ -1,4 +1,4 @@
-FROM redis:8.8.0-alpine
+FROM redis:8.8.2-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 #COPY redis.conf /usr/local/etc/redis/redis.conf
