@@ -1,4 +1,4 @@
-FROM ibm-semeru-runtimes:open-17.0.19.0-jdk
+FROM ibm-semeru-runtimes:open-17.0.20.0-jdk
 LABEL maintainer="chenbz35@dimpt.com"
 
 RUN apt-get update \

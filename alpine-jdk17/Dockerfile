@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.19-alpine
+FROM amazoncorretto:17.0.20-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/main' > /etc/apk/repositories \
