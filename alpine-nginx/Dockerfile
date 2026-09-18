@@ -1,6 +1,6 @@
-FROM nginx:1.30.4-alpine
+FROM nginx:1.30.5-alpine
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="nginx:1.30.4-alpine"
+LABEL origin="nginx:1.30.5-alpine"
 
 WORKDIR /root/
 
