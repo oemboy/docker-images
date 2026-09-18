@@ -9,10 +9,10 @@ RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/rep
  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
  && echo "Asia/Shanghai" > /etc/timezone \
  && rm -rf /var/cache/apk/* \
- && COREPACK_NPM_REGISTRY=https://registry.npmmirror.com corepack prepare npm@latest --activate \
+ && COREPACK_NPM_REGISTRY=https://registry.npmmirror.com corepack prepare npm@10 --activate \
  && corepack enable npm \
- && npm install -g pnpm --registry=https://registry.npmmirror.com \
- && npm install -g nnrm  --registry=https://registry.npmmirror.com \
+ && npm install -g pnpm --allow-scripts=pnpm --registry=https://registry.npmmirror.com \
+ && npm install -g nnrm --allow-scripts=nnrm --registry=https://registry.npmmirror.com \
  && nnrm use taobao \
  && nyrm use taobao \
  && npm cache clean --force
