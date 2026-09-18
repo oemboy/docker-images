@@ -1,3 +1,3 @@
 #!/bin/bash
 #cp /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc .
-docker build --no-cache --add-host dimpt.site:10.100.240.25 -t dimpt.site:8180/platform/alpine-jdk21:21.0.11 --push .
+docker build --no-cache --add-host dimpt.site:10.100.240.25 -t dimpt.site:8180/platform/alpine-jdk21:21.0.12 --push .

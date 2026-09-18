@@ -1,9 +1,9 @@
-FROM amazoncorretto:21.0.11-alpine
+FROM amazoncorretto:21.0.12-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 COPY NotoSansCJK-Regular.ttc /usr/share/fonts/noto/
-RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/repositories \
- && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' >> /etc/apk/repositories \
+RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/main' > /etc/apk/repositories \
+ && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/community' >> /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add curl coreutils fontconfig htop net-tools su-exec tzdata wget \

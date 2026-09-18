@@ -1,11 +1,11 @@
-FROM eclipse-temurin:21.0.11_10-jre-alpine
+FROM eclipse-temurin:21.0.12_8-jre-alpine
 LABEL maintainer="chenbz35@dimpt.com"
 
 # ENV LANG=C.UTF-8
 # ENV LANG=en_US.UTF-8
 
-RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/main' > /etc/apk/repositories \
- && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.23/community' >> /etc/apk/repositories \
+RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/main' > /etc/apk/repositories \
+ && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/community' >> /etc/apk/repositories \
  && apk update \
  && apk upgrade \
  && apk add curl fontconfig net-tools su-exec tzdata coreutils wget \
