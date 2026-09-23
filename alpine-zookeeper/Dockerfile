@@ -1,7 +1,7 @@
 FROM dimpt.site:8181/platform/alpine-jdk11:11.0.32 AS prepare
 
-ARG PKG_VERSION=zookeeper-3.8.6
-ARG ARCHIVE_NAME=apache-zookeeper-3.8.6-bin
+ARG PKG_VERSION=zookeeper-3.8.7
+ARG ARCHIVE_NAME=apache-zookeeper-3.8.7-bin
 ARG ZOO_URL=https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/${PKG_VERSION}/${ARCHIVE_NAME}.tar.gz
 
 ARG ZK_HOME=/opt/zookeeper

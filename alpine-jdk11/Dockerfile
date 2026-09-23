@@ -1,6 +1,6 @@
 FROM amazoncorretto:11.0.32-alpine
 LABEL maintainer="chenbz35@dimpt.com"
-LABEL origin="amazoncorretto:11.0.30-alpine"
+LABEL origin="amazoncorretto:11.0.32-alpine"
 
 RUN echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/main' > /etc/apk/repositories \
  && echo 'https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.24/community' >> /etc/apk/repositories \

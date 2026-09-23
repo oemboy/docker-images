@@ -15,7 +15,7 @@
     <description>alpine-zookeeper with font, net-tools, timezone, C.UTF-8</description>
 
     <properties>
-        <platform.docker.tag>3.8.6</platform.docker.tag>
+        <platform.docker.tag>3.8.7</platform.docker.tag>
     </properties>
 
     <profiles>
