@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --add-host dimpt.site:10.100.240.25 -t dimpt.site:8180/platform/mysql:8.4.7-oracle9 --push .
+docker build -t dimpt.site:8180/platform/mysql:8.4.11-oracle9 --push .

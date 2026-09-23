@@ -11,12 +11,11 @@
     </parent>
     <packaging>pom</packaging>
     <artifactId>mysql</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>mysql</name>
     <description>mysql with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>8.4.7-oracle9</platform.docker.tag>
+        <platform.docker.tag>8.4.11-oracle9</platform.docker.tag>
     </properties>
 
     <profiles>
@@ -44,6 +43,11 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                        <buildx>
+                                            <platforms>
+                                                <platform>${docker.platforms}</platform>
+                                            </platforms>
+                                        </buildx>
                                     </build>
                                 </image>
                             </images>

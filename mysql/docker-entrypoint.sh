@@ -4,10 +4,13 @@ shopt -s nullglob
 
 # logging functions
 mysql_log() {
-	local type="$1"; shift
+	local type="$1"
+	shift
 	# accept argument string or stdin
-	local text="$*"; if [ "$#" -eq 0 ]; then text="$(cat)"; fi
-	local dt; dt="$(date --rfc-3339=seconds)"
+	local text="$*"
+	if [ "$#" -eq 0 ]; then text="$(cat)"; fi
+	local dt
+	dt="$(date --rfc-3339=seconds)"
 	printf '%s [%s] [Entrypoint]: %s\n' "$dt" "$type" "$text"
 }
 mysql_note() {
@@ -36,7 +39,7 @@ file_env() {
 	if [ "${!var:-}" ]; then
 		val="${!var}"
 	elif [ "${!fileVar:-}" ]; then
-		val="$(< "${!fileVar}")"
+		val="$(<"${!fileVar}")"
 	fi
 	export "$var"="$val"
 	unset "$fileVar"
@@ -45,9 +48,9 @@ file_env() {
 # check to see if this file is being run or sourced from another script
 _is_sourced() {
 	# https://unix.stackexchange.com/a/215279
-	[ "${#FUNCNAME[@]}" -ge 2 ] \
-		&& [ "${FUNCNAME[0]}" = '_is_sourced' ] \
-		&& [ "${FUNCNAME[1]}" = 'source' ]
+	[ "${#FUNCNAME[@]}" -ge 2 ] &&
+		[ "${FUNCNAME[0]}" = '_is_sourced' ] &&
+		[ "${FUNCNAME[1]}" = 'source' ]
 }
 
 # usage: docker_process_init_files [file [file [...]]]
@@ -55,29 +58,49 @@ _is_sourced() {
 # process initializer files, based on file extensions
 docker_process_init_files() {
 	# mysql here for backwards compatibility "${mysql[@]}"
-	mysql=( docker_process_sql )
+	mysql=(docker_process_sql)
 
 	echo
 	local f
 	for f; do
 		case "$f" in
-			*.sh)
-				# https://github.com/docker-library/postgres/issues/450#issuecomment-393167936
-				# https://github.com/docker-library/postgres/pull/452
-				if [ -x "$f" ]; then
-					mysql_note "$0: running $f"
-					"$f"
-				else
-					mysql_note "$0: sourcing $f"
-					. "$f"
-				fi
-				;;
-			*.sql)     mysql_note "$0: running $f"; docker_process_sql < "$f"; echo ;;
-			*.sql.bz2) mysql_note "$0: running $f"; bunzip2 -c "$f" | docker_process_sql; echo ;;
-			*.sql.gz)  mysql_note "$0: running $f"; gunzip -c "$f" | docker_process_sql; echo ;;
-			*.sql.xz)  mysql_note "$0: running $f"; xzcat "$f" | docker_process_sql; echo ;;
-			*.sql.zst) mysql_note "$0: running $f"; zstd -dc "$f" | docker_process_sql; echo ;;
-			*)         mysql_warn "$0: ignoring $f" ;;
+		*.sh)
+			# https://github.com/docker-library/postgres/issues/450#issuecomment-393167936
+			# https://github.com/docker-library/postgres/pull/452
+			if [ -x "$f" ]; then
+				mysql_note "$0: running $f"
+				"$f"
+			else
+				mysql_note "$0: sourcing $f"
+				. "$f"
+			fi
+			;;
+		*.sql)
+			mysql_note "$0: running $f"
+			docker_process_sql <"$f"
+			echo
+			;;
+		*.sql.bz2)
+			mysql_note "$0: running $f"
+			bunzip2 -c "$f" | docker_process_sql
+			echo
+			;;
+		*.sql.gz)
+			mysql_note "$0: running $f"
+			gunzip -c "$f" | docker_process_sql
+			echo
+			;;
+		*.sql.xz)
+			mysql_note "$0: running $f"
+			xzcat "$f" | docker_process_sql
+			echo
+			;;
+		*.sql.zst)
+			mysql_note "$0: running $f"
+			zstd -dc "$f" | docker_process_sql
+			echo
+			;;
+		*) mysql_warn "$0: ignoring $f" ;;
 		esac
 		echo
 	done
@@ -90,7 +113,7 @@ _verboseHelpArgs=(
 )
 
 mysql_check_config() {
-	local toRun=( "$@" "${_verboseHelpArgs[@]}" ) errors
+	local toRun=("$@" "${_verboseHelpArgs[@]}") errors
 	if ! errors="$("${toRun[@]}" 2>&1 >/dev/null)"; then
 		mysql_error $'mysqld failed while attempting to check config\n\tcommand was: '"${toRun[*]}"$'\n\t'"$errors"
 	fi
@@ -100,9 +123,10 @@ mysql_check_config() {
 # We use mysqld --verbose --help instead of my_print_defaults because the
 # latter only show values present in config files, and not server defaults
 mysql_get_config() {
-	local conf="$1"; shift
-	"$@" "${_verboseHelpArgs[@]}" 2>/dev/null \
-		| awk -v conf="$conf" '$1 == conf && /^[^ \t]/ { sub(/^[^ \t]+[ \t]+/, ""); print; exit }'
+	local conf="$1"
+	shift
+	"$@" "${_verboseHelpArgs[@]}" 2>/dev/null |
+		awk -v conf="$conf" '$1 == conf && /^[^ \t]/ { sub(/^[^ \t]+[ \t]+/, ""); print; exit }'
 	# match "datadir      /some/path with/spaces in/it here" but not "--xyz=abc\n     datadir (xyz)"
 }
 
@@ -129,7 +153,7 @@ docker_temp_server_start() {
 # Stop the server. When using a local socket file mysqladmin will block until
 # the shutdown is complete.
 docker_temp_server_stop() {
-	if ! mysqladmin --defaults-extra-file=<( _mysql_passfile ) shutdown -uroot --socket="${SOCKET}"; then
+	if ! mysqladmin --defaults-extra-file=<(_mysql_passfile) shutdown -uroot --socket="${SOCKET}"; then
 		mysql_error "Unable to shut down server."
 	fi
 }
@@ -168,9 +192,10 @@ docker_verify_minimum_env() {
 # creates folders for the database
 # also ensures permission for user mysql of run as root
 docker_create_db_directories() {
-	local user; user="$(id -u)"
+	local user
+	user="$(id -u)"
 
-	local -A dirs=( ["$DATADIR"]=1 )
+	local -A dirs=(["$DATADIR"]=1)
 	local dir
 	dir="$(dirname "$SOCKET")"
 	dirs["$dir"]=1
@@ -182,8 +207,7 @@ docker_create_db_directories() {
 		keyring_file_data \
 		pid-file \
 		secure-file-priv \
-		slow-query-log-file \
-	; do
+		slow-query-log-file; do
 		dir="$(mysql_get_config "$conf" "$@")"
 
 		# skip empty values
@@ -191,13 +215,13 @@ docker_create_db_directories() {
 			continue
 		fi
 		case "$conf" in
-			secure-file-priv)
-				# already points at a directory
-				;;
-			*)
-				# other config options point at a file, but we need the directory
-				dir="$(dirname "$dir")"
-				;;
+		secure-file-priv)
+			# already points at a directory
+			;;
+		*)
+			# other config options point at a file, but we need the directory
+			dir="$(dirname "$dir")"
+			;;
 		esac
 
 		dirs["$dir"]=1
@@ -214,8 +238,7 @@ docker_create_db_directories() {
 # initializes the database directory
 docker_init_database_dir() {
 	mysql_note "Initializing database files"
-	"$@" --initialize-insecure --default-time-zone=SYSTEM --autocommit=1
-	# explicitly enable autocommit to combat https://bugs.mysql.com/bug.php?id=110535 (TODO remove this when 8.0 is EOL; see https://github.com/mysql/mysql-server/commit/7dbf4f80ed15f3c925cfb2b834142f23a2de719a)
+	"$@" --initialize-insecure --default-time-zone=SYSTEM
 	mysql_note "Database files initialized"
 }
 
@@ -247,7 +270,7 @@ docker_setup_env() {
 docker_process_sql() {
 	passfileArgs=()
 	if [ '--dont-use-mysql-root-password' = "$1" ]; then
-		passfileArgs+=( "$1" )
+		passfileArgs+=("$1")
 		shift
 	fi
 	# args sent in can override this db, since they will be later in the command
@@ -255,7 +278,7 @@ docker_process_sql() {
 		set -- --database="$MYSQL_DATABASE" "$@"
 	fi
 
-	mysql --defaults-extra-file=<( _mysql_passfile "${passfileArgs[@]}") --protocol=socket -uroot -hlocalhost --socket="${SOCKET}" --comments "$@"
+	mysql --defaults-extra-file=<(_mysql_passfile "${passfileArgs[@]}") --protocol=socket -uroot -hlocalhost --socket="${SOCKET}" --comments "$@"
 }
 
 # Initializes database with timezone info and root password, plus optional extra db/user
@@ -263,14 +286,15 @@ docker_setup_db() {
 	# Load timezone info into database
 	if [ -z "$MYSQL_INITDB_SKIP_TZINFO" ]; then
 		# sed is for https://bugs.mysql.com/bug.php?id=20545
-		mysql_tzinfo_to_sql /usr/share/zoneinfo \
-			| sed 's/Local time zone must be set--see zic manual page/FCTY/' \
-			| docker_process_sql --dont-use-mysql-root-password --database=mysql
-			# tell docker_process_sql to not use MYSQL_ROOT_PASSWORD since it is not set yet
+		mysql_tzinfo_to_sql /usr/share/zoneinfo |
+			sed 's/Local time zone must be set--see zic manual page/FCTY/' |
+			docker_process_sql --dont-use-mysql-root-password --database=mysql
+		# tell docker_process_sql to not use MYSQL_ROOT_PASSWORD since it is not set yet
 	fi
 	# Generate random root password
 	if [ -n "$MYSQL_RANDOM_ROOT_PASSWORD" ]; then
-		MYSQL_ROOT_PASSWORD="$(openssl rand -base64 24)"; export MYSQL_ROOT_PASSWORD
+		MYSQL_ROOT_PASSWORD="$(openssl rand -base64 24)"
+		export MYSQL_ROOT_PASSWORD
 		mysql_note "GENERATED ROOT PASSWORD: $MYSQL_ROOT_PASSWORD"
 	fi
 	# Sets root password and creates root users for non-localhost hosts
@@ -352,9 +376,9 @@ _mysql_want_help() {
 	local arg
 	for arg; do
 		case "$arg" in
-			-'?'|--help|--print-defaults|-V|--version)
-				return 0
-				;;
+		-'?' | --help | --print-defaults | -V | --version)
+			return 0
+			;;
 		esac
 	done
 	return 1
@@ -386,7 +410,7 @@ _main() {
 			docker_verify_minimum_env
 
 			# check dir permissions to reduce likelihood of half-initialized database
-			ls /docker-entrypoint-initdb.d/ > /dev/null
+			ls /docker-entrypoint-initdb.d/ >/dev/null
 
 			docker_init_database_dir "$@"
 
