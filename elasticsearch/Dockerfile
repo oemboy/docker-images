@@ -1,4 +1,4 @@
-FROM elasticsearch:8.19.17
+FROM elasticsearch:8.19.21
 LABEL maintainer="chenbz35@dimpt.com"
 USER root
 
@@ -9,8 +9,8 @@ USER root
 ENV TZ=Asia/Shanghai
 RUN apt update -y && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
-    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-ik/stable/elasticsearch-analysis-ik-8.19.17.zip && \
-    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-pinyin/stable/elasticsearch-analysis-pinyin-8.19.17.zip && \
+    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-ik/stable/elasticsearch-analysis-ik-8.19.21.zip && \
+    ./bin/elasticsearch-plugin install --batch https://release.infinilabs.com/analysis-pinyin/stable/elasticsearch-analysis-pinyin-8.19.21.zip && \
     chown -R 0:0 /usr/share/elasticsearch && \
     chmod -R g+rwX /usr/share/elasticsearch
 

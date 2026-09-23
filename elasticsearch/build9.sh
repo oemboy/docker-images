@@ -1,4 +1,4 @@
 #!/bin/bash
-docker build --add-host dimpt.site:10.100.240.25 --provenance=false \
+docker buildx build --provenance=false --platform=linux/amd64,linux/arm64 \
             -f Dockerfile9 \
-            -t dimpt.site:8180/platform/elasticsearch:9.4.2 --push .
+            -t dimpt.site:8180/platform/elasticsearch:9.4.6 --push .
