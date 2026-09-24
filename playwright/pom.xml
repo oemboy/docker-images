@@ -15,7 +15,7 @@
     <description>playwright with font, net-tools, timezone</description>
 
     <properties>
-        <platform.docker.tag>v1.58.0-noble-jdk21</platform.docker.tag>
+        <platform.docker.tag>v1.63.0-jdk25</platform.docker.tag>
     </properties>
 
     <profiles>
@@ -43,6 +43,11 @@
                                     <name>platform/${project.name}:${platform.docker.tag}</name>
                                     <build>
                                         <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                        <buildx>
+                                            <platforms>
+                                                <platform>${docker.platforms}</platform>
+                                            </platforms>
+                                        </buildx>
                                     </build>
                                 </image>
                             </images>
